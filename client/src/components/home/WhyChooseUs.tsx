@@ -27,7 +27,7 @@ export function WhyChooseUs() {
       <div 
         className="absolute inset-0 opacity-20" 
         style={{
-          backgroundImage: "url('/images/why-choose-us-bg.jpeg')",
+          backgroundImage: "url('/images/bg-why-choose-us.jpeg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat"
