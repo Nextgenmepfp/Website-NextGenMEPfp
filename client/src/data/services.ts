@@ -25,7 +25,7 @@ export const services: Service[] = [
     id: 3,
     title: "Fire Alarm & Protection",
     description: "Advanced fire alarm and suppression system design with detailed riser diagrams, device layouts, and sequence of operations. Our designs adhere to NFPA standards and local fire codes for comprehensive life safety protection.",
-    imageUrl: "/images/services/WhatsApp Image 2025-03-29 at 19.28.02.jpeg",
+    imageUrl: "/images/services/WhatsApp Image 2025-03-29 at 19.35.21.jpeg",
     icon: "fa-fire-extinguisher"
   },
   {
