@@ -42,7 +42,7 @@ export function WhyChooseUs() {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-6 max-w-[1400px] mx-auto px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1800px] mx-auto px-4">
           {whyChooseUsCards.map((card) => (
             <div 
               key={card.id}
@@ -54,8 +54,8 @@ export function WhyChooseUs() {
                   alt={card.title}
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute bottom-6 left-0 right-0 text-white text-center px-2">
-                  <h3 className="text-2xl font-bold py-1 whitespace-nowrap text-shadow-lg">
+                <div className="absolute bottom-6 left-0 right-0 text-white text-center">
+                  <h3 className="text-3xl font-bold py-1 mx-auto text-shadow-lg px-4">
                     {card.title}
                   </h3>
                 </div>
