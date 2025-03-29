@@ -42,19 +42,19 @@ export function WhyChooseUs() {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-10 max-w-7xl mx-auto">
           {whyChooseUsCards.map((card) => (
             <div 
               key={card.id}
               className="rounded-lg overflow-hidden shadow-lg transition-shadow duration-300 group w-full"
             >
-              <div className="h-64 relative overflow-hidden">
+              <div className="h-80 relative overflow-hidden">
                 <img 
                   src={card.image} 
                   alt={card.title}
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-primary text-white text-center p-3 h-16 flex items-center justify-center">
+                <div className="absolute bottom-0 left-0 right-0 bg-primary bg-opacity-70 text-white text-center p-3 h-16 flex items-center justify-center backdrop-blur-sm">
                   <h3 className="text-xl font-bold whitespace-nowrap">
                     {card.title}
                   </h3>
