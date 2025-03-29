@@ -26,28 +26,23 @@ export function ServicesSection() {
           </p>
         </div>
         
-        <div className="flex flex-row space-x-6 justify-center mx-auto px-4 w-full overflow-x-auto pb-4">
+        <div className="flex flex-row space-x-8 justify-center mx-auto px-4 w-full overflow-x-auto pb-8">
           {services.slice(0, 3).map((service) => (
             <div 
               key={service.id}
-              className="rounded-xl overflow-hidden shadow-xl transition-shadow duration-300 group min-w-[30%] max-w-[32%] flex-shrink-0 bg-white bg-opacity-10 backdrop-blur-sm border border-gray-200/20"
+              className="rounded-[40px] overflow-hidden shadow-lg transition-shadow duration-300 group min-w-[300px] max-w-[350px] h-[450px] flex-shrink-0 bg-white bg-opacity-5 backdrop-blur-sm border border-gray-200/10 flex flex-col"
             >
-              <div className="h-48 relative overflow-hidden">
-                <img 
-                  src={service.imageUrl} 
-                  alt={service.title}
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-6 text-white">
-                <h3 className="text-2xl font-bold mb-3 text-center">{service.title}</h3>
-                <p className="text-sm mb-6 text-gray-200 line-clamp-3">
-                  {service.description}
-                </p>
-                <div className="text-center">
+              <div className="p-10 text-white flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-2xl font-bold mb-6 text-center">{service.title}</h3>
+                  <p className="text-sm mb-10 text-gray-200 text-center line-clamp-6">
+                    {service.description}
+                  </p>
+                </div>
+                <div className="text-center mt-auto">
                   <a 
                     href="#contact" 
-                    className="text-white text-sm font-medium inline-block px-4 py-2 rounded-md bg-primary border border-white/30 hover:bg-primary-dark transition-colors duration-300"
+                    className="text-white text-sm font-medium inline-block px-6 py-3 rounded-full bg-primary border border-white/30 hover:bg-primary-dark transition-colors duration-300"
                   >
                     Contact Us For More Information
                   </a>
