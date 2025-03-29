@@ -11,21 +11,21 @@ export const services: Service[] = [
     id: 1,
     title: "MEP Blueprint Design",
     description: "Full-service Mechanical, Electrical, and Plumbing blueprint design with BIM integration for complex commercial and institutional buildings. Our designs ensure optimal energy efficiency, code compliance, and system integration for seamless building operation.",
-    imageUrl: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&h=400&q=80",
+    imageUrl: "/images/services/WhatsApp Image 2025-03-29 at 19.27.28.jpeg",
     icon: "fa-pencil-ruler"
   },
   {
     id: 2,
     title: "Low Voltage Systems",
     description: "Comprehensive low voltage design including structured cabling, access control, surveillance systems, and audiovisual integration. Our expertise in TIA/EIA standards ensures future-proof infrastructure for your telecommunications needs.",
-    imageUrl: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=600&h=400&q=80",
+    imageUrl: "/images/services/WhatsApp Image 2025-03-29 at 19.28.02.jpeg",
     icon: "fa-network-wired"
   },
   {
     id: 3,
     title: "Fire Alarm & Protection",
     description: "Advanced fire alarm and suppression system design with detailed riser diagrams, device layouts, and sequence of operations. Our designs adhere to NFPA standards and local fire codes for comprehensive life safety protection.",
-    imageUrl: "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&w=600&h=400&q=80",
+    imageUrl: "/images/services/WhatsApp Image 2025-03-29 at 19.28.02.jpeg",
     icon: "fa-fire-extinguisher"
   },
   {

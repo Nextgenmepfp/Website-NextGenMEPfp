@@ -1,41 +1,49 @@
 import { services } from "@/data/services";
-import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-16 bg-neutral-200">
-      <div className="container mx-auto px-4">
+    <section 
+      id="services" 
+      className="py-16 relative bg-primary"
+    >
+      {/* Background image with transparency */}
+      <div 
+        className="absolute inset-0 opacity-20" 
+        style={{
+          backgroundImage: "url('/images/bg-why-choose-us.jpeg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat"
+        }}
+      ></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Our Services</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4 text-white">Our Services</h2>
+          <p className="text-lg text-white max-w-3xl mx-auto">
             Comprehensive MEP, fire protection, and low voltage solutions for commercial and industrial projects.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service) => (
-            <Card 
+        <div className="flex flex-row space-x-6 justify-center mx-auto px-4 w-full overflow-x-auto pb-4">
+          {services.slice(0, 3).map((service) => (
+            <div 
               key={service.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:-translate-y-2"
+              className="rounded-lg overflow-hidden shadow-xl transition-shadow duration-300 group min-w-[30%] max-w-[32%] flex-shrink-0"
             >
-              <div className="h-48 overflow-hidden">
+              <div className="h-96 relative overflow-hidden">
                 <img 
                   src={service.imageUrl} 
-                  alt={service.title} 
-                  className="w-full h-full object-cover"
+                  alt={service.title}
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
+                <div className="absolute bottom-6 left-0 right-0 text-white text-center">
+                  <h3 className="text-2xl font-bold py-1 mx-auto text-shadow-lg px-4">
+                    {service.title}
+                  </h3>
+                </div>
               </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                <p className="text-gray-600 mb-4">
-                  {service.description}
-                </p>
-                <a href="#contact" className="text-primary font-medium flex items-center hover:underline">
-                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </CardContent>
-            </Card>
+            </div>
           ))}
         </div>
       </div>
