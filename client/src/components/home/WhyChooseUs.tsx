@@ -19,12 +19,24 @@ const whyChooseUsCards = [
 
 export function WhyChooseUs() {
   return (
-    <section id="why-choose-us" className="py-16 bg-primary bg-opacity-5">
-      <div className="container mx-auto px-4">
+    <section 
+      id="why-choose-us" 
+      className="py-16 relative"
+      style={{
+        backgroundImage: "url('/images/WhatsApp Image 2025-03-29 at 18.52.00.jpeg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat"
+      }}
+    >
+      {/* Overlay to make content readable against the background image */}
+      <div className="absolute inset-0 bg-black/60"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-primary">Why Choose Us</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            NEXTGENMEP brings industry-leading expertise and innovative solutions to every project.
+          <h2 className="text-3xl font-bold mb-4 text-white">Why Choose Us</h2>
+          <p className="text-lg text-gray-200 max-w-3xl mx-auto">
+            We Stand out in Low Voltage MEP & Blueprints Engineering
           </p>
         </div>
         
@@ -32,7 +44,7 @@ export function WhyChooseUs() {
           {whyChooseUsCards.map((card) => (
             <div 
               key={card.id}
-              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-200 group"
+              className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group"
             >
               <div className="h-64 relative overflow-hidden">
                 <img 
