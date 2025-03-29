@@ -75,26 +75,33 @@ export function HeroSection() {
         </div>
         
         {/* Hero CTA (1/3 width on desktop) */}
-        <div className="md:col-span-1 bg-primary text-white p-8 flex flex-col justify-center items-center text-center">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">Blueprint Excellence for Infrastructure</h1>
-          <p className="mb-6">South Florida's premier MEP and low voltage design firm specializing in data centers, high-rise developments, and critical infrastructure projects.</p>
-          <p className="text-sm mb-8">BICSI Certified • RCDD On Staff • NFPA Compliant</p>
-          <div className="space-y-4 w-full max-w-xs">
-            <a href="#waitlist">
-              <Button 
-                className="w-full bg-white text-primary font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition"
-              >
-                Request Consultation
-              </Button>
-            </a>
-            <a href="#contact">
-              <Button 
-                variant="outline" 
-                className="w-full border-2 border-white text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:bg-opacity-10 transition"
-              >
-                View Our Portfolio
-              </Button>
-            </a>
+        <div className="md:col-span-1 bg-primary text-white p-4 flex flex-col justify-center items-center text-center relative">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <img 
+              src="/images/choose.png" 
+              alt="Professional Consultant" 
+              className="object-contain h-full max-h-80 md:max-h-96 z-10"
+            />
+          </div>
+          
+          <div className="mt-auto pt-64 md:pt-80 relative z-20 w-full bg-gradient-to-t from-primary to-transparent">
+            <div className="space-y-4 w-full max-w-xs mx-auto">
+              <a href="#waitlist">
+                <Button 
+                  className="w-full bg-white text-primary font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition"
+                >
+                  Request Consultation
+                </Button>
+              </a>
+              <a href="#contact">
+                <Button 
+                  variant="outline" 
+                  className="w-full border-2 border-white text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:bg-opacity-10 transition"
+                >
+                  View Our Portfolio
+                </Button>
+              </a>
+            </div>
           </div>
         </div>
       </div>
