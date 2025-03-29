@@ -57,8 +57,8 @@ export function Header() {
           <nav className="hidden md:flex">
             <ul className="flex space-x-1">
               <li>
-                <Link href="/">
-                  <a className="bg-primary text-white px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition">HOME</a>
+                <Link href="/" className="bg-primary text-white px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition">
+                  HOME
                 </Link>
               </li>
               <li>
@@ -88,8 +88,12 @@ export function Header() {
               <div className="py-4">
                 <ul className="space-y-2">
                   <li>
-                    <Link href="/" onClick={() => setIsOpen(false)}>
-                      <a className="block py-2 px-4 bg-primary text-white rounded font-medium">HOME</a>
+                    <Link 
+                      href="/" 
+                      onClick={() => setIsOpen(false)}
+                      className="block py-2 px-4 bg-primary text-white rounded font-medium"
+                    >
+                      HOME
                     </Link>
                   </li>
                   <li>

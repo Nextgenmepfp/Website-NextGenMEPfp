@@ -76,14 +76,15 @@ export function HeroSection() {
         
         {/* Hero CTA (1/3 width on desktop) */}
         <div className="md:col-span-1 bg-primary text-white p-8 flex flex-col justify-center items-center text-center">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">Connecting your business with the world</h1>
-          <p className="mb-8">Professional MEP, fire protection, and low voltage solutions for your projects.</p>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">Blueprint Excellence for Infrastructure</h1>
+          <p className="mb-6">South Florida's premier MEP and low voltage design firm specializing in data centers, high-rise developments, and critical infrastructure projects.</p>
+          <p className="text-sm mb-8">BICSI Certified • RCDD On Staff • NFPA Compliant</p>
           <div className="space-y-4 w-full max-w-xs">
             <a href="#waitlist">
               <Button 
                 className="w-full bg-white text-primary font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition"
               >
-                Join Our Waitlist
+                Request Consultation
               </Button>
             </a>
             <a href="#contact">
@@ -91,7 +92,7 @@ export function HeroSection() {
                 variant="outline" 
                 className="w-full border-2 border-white text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:bg-opacity-10 transition"
               >
-                Contact Us
+                View Our Portfolio
               </Button>
             </a>
           </div>

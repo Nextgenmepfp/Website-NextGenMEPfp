@@ -8,20 +8,32 @@ export type Feature = {
 export const features: Feature[] = [
   {
     id: 1,
-    title: "Licensed & Certified",
-    description: "Our team holds all required industry certifications and licenses to handle your project with excellence.",
-    icon: "fa-certificate"
+    title: "Advanced BIM Integration",
+    description: "Our team utilizes Revit MEP and advanced BIM coordination to produce clash-free designs and streamlined construction documents for complex projects.",
+    icon: "fa-cubes"
   },
   {
     id: 2,
-    title: "Experienced Team",
-    description: "With decades of combined experience, our professionals deliver superior results on every project.",
-    icon: "fa-users"
+    title: "Industry Certifications",
+    description: "Our staff includes RCDD, PE, LEED AP, and NICET certified professionals with specialized expertise in data center, healthcare, and high-rise infrastructure design.",
+    icon: "fa-award"
   },
   {
     id: 3,
-    title: "On-Time Delivery",
-    description: "We understand the importance of schedules and consistently deliver projects on time and within budget.",
-    icon: "fa-clock"
+    title: "Code Compliance Expertise",
+    description: "We maintain comprehensive knowledge of Florida Building Code, NEC, NFPA, and TIA/EIA standards to ensure your project passes inspections without costly revisions.",
+    icon: "fa-shield-alt"
+  },
+  {
+    id: 4,
+    title: "Technical Precision",
+    description: "Our detailed blueprints include comprehensive riser diagrams, equipment schedules, and coordination drawings that minimize RFIs during construction.",
+    icon: "fa-drafting-compass"
+  },
+  {
+    id: 5,
+    title: "Energy Optimization",
+    description: "We incorporate advanced modeling techniques to design systems that meet energy code requirements while reducing operational costs throughout the building lifecycle.",
+    icon: "fa-leaf"
   }
 ];

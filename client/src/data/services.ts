@@ -9,44 +9,44 @@ export type Service = {
 export const services: Service[] = [
   {
     id: 1,
-    title: "Mechanical Systems",
-    description: "Complete HVAC design, installation, and maintenance services for optimal building performance.",
-    imageUrl: "https://images.unsplash.com/photo-1581094794329-c8112a89f12e?auto=format&fit=crop&w=600&h=400&q=80",
-    icon: "fa-fan"
+    title: "MEP Blueprint Design",
+    description: "Full-service Mechanical, Electrical, and Plumbing blueprint design with BIM integration for complex commercial and institutional buildings. Our designs ensure optimal energy efficiency, code compliance, and system integration for seamless building operation.",
+    imageUrl: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&h=400&q=80",
+    icon: "fa-pencil-ruler"
   },
   {
     id: 2,
-    title: "Electrical Systems",
-    description: "Comprehensive electrical solutions from power distribution to lighting controls and emergency systems.",
-    imageUrl: "https://images.unsplash.com/photo-1558211583-d26f610c1eb1?auto=format&fit=crop&w=600&h=400&q=80",
-    icon: "fa-bolt"
+    title: "Low Voltage Systems",
+    description: "Comprehensive low voltage design including structured cabling, access control, surveillance systems, and audiovisual integration. Our expertise in TIA/EIA standards ensures future-proof infrastructure for your telecommunications needs.",
+    imageUrl: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=600&h=400&q=80",
+    icon: "fa-network-wired"
   },
   {
     id: 3,
-    title: "Fire Protection",
-    description: "State-of-the-art fire detection, alarm, and suppression systems for complete building safety.",
-    imageUrl: "https://images.unsplash.com/photo-1569841294485-491e8a96928b?auto=format&fit=crop&w=600&h=400&q=80",
+    title: "Fire Alarm & Protection",
+    description: "Advanced fire alarm and suppression system design with detailed riser diagrams, device layouts, and sequence of operations. Our designs adhere to NFPA standards and local fire codes for comprehensive life safety protection.",
+    imageUrl: "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&w=600&h=400&q=80",
     icon: "fa-fire-extinguisher"
   },
   {
     id: 4,
-    title: "Plumbing Systems",
-    description: "Expert design and installation of plumbing systems, including water supply, drainage, and fixtures.",
-    imageUrl: "https://images.unsplash.com/photo-1563204996-8965751d75d4?auto=format&fit=crop&w=600&h=400&q=80",
-    icon: "fa-faucet"
+    title: "Data Center Infrastructure",
+    description: "Specialized MEP design for data centers including precision cooling, redundant power distribution, and comprehensive monitoring systems. Our designs prioritize reliability, scalability, and energy efficiency for mission-critical facilities.",
+    imageUrl: "https://images.unsplash.com/photo-1597138177671-3a8d31815c19?auto=format&fit=crop&w=600&h=400&q=80",
+    icon: "fa-server"
   },
   {
     id: 5,
-    title: "Security Systems",
-    description: "Comprehensive security solutions including access control, surveillance, and intrusion detection.",
+    title: "Building Automation",
+    description: "Intelligent building control systems design for HVAC, lighting, and security integration. Our automation solutions optimize energy usage, enhance occupant comfort, and provide detailed monitoring capabilities for facility management.",
     imageUrl: "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&h=400&q=80",
-    icon: "fa-shield-alt"
+    icon: "fa-robot"
   },
   {
     id: 6,
-    title: "Low Voltage Systems",
-    description: "Data, voice, A/V, and structured cabling solutions for modern building communication needs.",
-    imageUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&h=400&q=80",
-    icon: "fa-network-wired"
+    title: "Energy Modeling & Analysis",
+    description: "Comprehensive energy modeling and performance analysis to optimize building systems and reduce operational costs. Our team utilizes advanced simulation tools to evaluate design alternatives and recommend efficient solutions.",
+    imageUrl: "https://images.unsplash.com/photo-1473308822086-710304d7d30c?auto=format&fit=crop&w=600&h=400&q=80",
+    icon: "fa-chart-line"
   }
 ];
