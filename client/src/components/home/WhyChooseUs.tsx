@@ -1,30 +1,25 @@
-import { Button } from "@/components/ui/button";
-
-// Define the card data with image paths and placeholder text
+// Define the card data with image paths and updated titles
 const whyChooseUsCards = [
   {
     id: 1,
     image: "/images/why-choose-us/WhatsApp Image 2025-03-29 at 18.14.20.jpeg",
-    title: "Expertise in MEP Systems",
-    description: "Placeholder text for card 1. This will be replaced with actual content once provided."
+    title: "BLUEPRINT-READY"
   },
   {
     id: 2,
-    image: "/images/why-choose-us/WhatsApp Image 2025-03-29 at 18.14.21.jpeg",
-    title: "Advanced Infrastructure Solutions",
-    description: "Placeholder text for card 2. This will be replaced with actual content once provided."
+    image: "/images/why-choose-us/WhatsApp Image 2025-03-29 at 18.34.31.jpeg",
+    title: "LOW VOLTAGE EXPERTS"
   },
   {
     id: 3,
-    image: "/images/why-choose-us/WhatsApp Image 2025-03-29 at 18.14.22.jpeg",
-    title: "Cutting-Edge Technology",
-    description: "Placeholder text for card 3. This will be replaced with actual content once provided."
+    image: "/images/why-choose-us/WhatsApp Image 2025-03-29 at 18.36.54.jpeg",
+    title: "AVAILABLE WORLDWIDE"
   }
 ];
 
 export function WhyChooseUs() {
   return (
-    <section id="why-choose-us" className="py-16 bg-gray-50">
+    <section id="why-choose-us" className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Why Choose Us</h2>
@@ -37,7 +32,7 @@ export function WhyChooseUs() {
           {whyChooseUsCards.map((card) => (
             <div 
               key={card.id}
-              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
+              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-200"
             >
               <div className="h-64 relative overflow-hidden">
                 <img 
@@ -45,19 +40,11 @@ export function WhyChooseUs() {
                   alt={card.title}
                   className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
                 />
-              </div>
-              
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-3 text-primary">{card.title}</h3>
-                <p className="text-gray-600 mb-4">
-                  {card.description}
-                </p>
-                <Button 
-                  variant="outline"
-                  className="w-full border-primary text-primary hover:bg-primary hover:text-white transition-colors"
-                >
-                  Learn More
-                </Button>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end justify-center">
+                  <h3 className="text-xl font-bold mb-6 text-white px-4 py-2 bg-primary bg-opacity-90 w-full text-center">
+                    {card.title}
+                  </h3>
+                </div>
               </div>
             </div>
           ))}
