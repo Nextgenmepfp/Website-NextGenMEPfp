@@ -24,7 +24,7 @@ function App() {
           <Route path="/services/:serviceId" element={<ServiceDetail />} /> {/* Added route for service details */}
           <Route path="/projects" component={Projects} />
           <Route path="/testimonials" component={Testimonials} />
-          <Route path="/contact" component={Contact} />
+          <Route path="/contact-us" component={Contact} />
           <Route component={NotFound} />
         </Switch>
       </main>
