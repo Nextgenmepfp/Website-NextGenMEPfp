@@ -2,20 +2,20 @@ import { Link } from "wouter";
 
 export function Footer() {
   return (
-    <footer className="bg-white py-12 border-t">
+    <footer className="bg-[#C41E3A] text-white py-12">
       <div className="container px-4 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Company Info */}
           <div>
             <Link href="/">
-              <img src="/images/logo.png" alt="NEXTGEN MEPfp" className="h-12 mb-4" />
+              <img src="/next-gen-final.jpeg" alt="NEXTGEN MEPfp" className="h-12 mb-4 bg-white rounded-md p-1" />
             </Link>
             <p className="text-black mb-4">
               4095 Southern BLVD Suite #207, WEST PALM BEACH, FL 33406
             </p>
             <p className="text-black">
-              <a href="tel:(877)307-8131" className="hover:text-[#971B1E] transition-colors">(877) 307-8131</a><br />
-              <a href="mailto:info@nextgenmepfp.com" className="hover:text-[#971B1E] transition-colors">info@nextgenmepfp.com</a>
+              <a href="tel:(877)307-8131" className="hover:text-gray-200 transition-colors">(877) 307-8131</a><br />
+              <a href="mailto:info@nextgenmepfp.com" className="hover:text-gray-200 transition-colors">info@nextgenmepfp.com</a>
             </p>
           </div>
 
@@ -50,12 +50,12 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-black text-sm">
+            <p className="text-white text-sm">
               © {new Date().getFullYear()} NEXTGEN MEPfp. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <Link href="/privacy-policy">
-                <span className="text-black hover:text-[#971B1E] transition-colors text-sm cursor-pointer">
+                <span className="text-white hover:text-gray-200 transition-colors text-sm cursor-pointer">
                   Privacy Policy
                 </span>
               </Link>
