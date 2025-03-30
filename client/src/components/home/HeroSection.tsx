@@ -14,12 +14,24 @@ export function HeroSection() {
         className="relative py-2 bg-white text-center overflow-hidden"
       >
         <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-10"></div>
-        <h2 className="text-4xl md:text-5xl font-bold text-[#F6050A] mb-0 px-4 relative z-10">
-          LOW VOLTAGE AND BLUEPRINT 
-          <span className="block mt-2 bg-gradient-to-r from-[#FA061A] to-red-400 bg-clip-text text-transparent">
-            ENGINEERING EXPERT
-          </span>
-        </h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-400 mb-4 px-4 relative z-10"
+        >
+          LOW VOLTAGE AND BLUEPRINT
+        </motion.h2>
+        <motion.h3
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-2xl md:text-3xl font-bold text-gray-800 text-center"
+        >
+          ENGINEERING EXPERT
+        </motion.h3>
       </motion.div>
 
       <div className="grid md:grid-cols-3 gap-4 max-w-[1920px] mx-auto p-2 bg-gray-50"> {/* Reduced padding */}
