@@ -1,4 +1,41 @@
 
+/* Mobile-first responsive styles */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  
+  .text-4xl {
+    font-size: 2rem;
+  }
+  
+  .py-20 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+/* Smooth transitions for interactive elements */
+button, a {
+  transition: all 0.3s ease;
+}
+
+/* Improved touch targets for mobile */
+@media (max-width: 768px) {
+  button, 
+  a, 
+  [role="button"] {
+    min-height: 44px;
+    padding: 0.75rem 1rem;
+  }
+}
+
+
 .bg-grid-pattern {
   background-image: linear-gradient(to right, #e5e7eb 1px, transparent 1px),
     linear-gradient(to bottom, #e5e7eb 1px, transparent 1px);
