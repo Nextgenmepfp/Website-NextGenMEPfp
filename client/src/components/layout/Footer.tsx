@@ -1,4 +1,4 @@
-import { Link } from "@/components/ui/link";
+import { Link } from "@radix-ui/react-navigation-menu";
 
 export function Footer() {
   return (
