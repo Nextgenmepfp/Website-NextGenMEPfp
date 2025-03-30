@@ -10,6 +10,7 @@ import { Footer } from "@/components/layout/Footer";
 import { RedBanner } from "@/components/layout/RedBanner";
 import NotFound from "@/pages/not-found";
 import { Toaster } from "@/components/ui/toaster";
+import ServiceDetail from '@/pages/ServiceDetail'; // Added import
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" component={Home} />
           <Route path="/why-choose-us" component={WhyChooseUs} />
           <Route path="/services" component={Services} />
+          <Route path="/services/:serviceId" element={<ServiceDetail />} /> {/* Added route for service details */}
           <Route path="/projects" component={Projects} />
           <Route path="/testimonials" component={Testimonials} />
           <Route path="/contact" component={Contact} />

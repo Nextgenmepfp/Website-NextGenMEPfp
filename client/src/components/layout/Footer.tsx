@@ -49,7 +49,7 @@ export function Footer() {
                 'Telecommunication Systems'
               ].map((service) => (
                 <li key={service}>
-                  <Link href={`/services/${service.toLowerCase().replace(/\s+/g, '-')}`}>
+                  <Link to={`/services/${service.toLowerCase().replace(/\s+/g, '-')}`}>
                     <span className="text-black hover:text-[#971B1E] transition-colors cursor-pointer">
                       {service}
                     </span>
