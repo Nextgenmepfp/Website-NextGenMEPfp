@@ -29,11 +29,11 @@ export function ImageSlider({ images, autoPlayInterval = 5000 }: ImageSliderProp
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
 
-  const handleTouchStart = (e) => {
+  const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX);
   };
 
-  const handleTouchMove = (e) => {
+  const handleTouchMove = (e: React.TouchEvent) => {
     setTouchEnd(e.targetTouches[0].clientX);
   };
 
@@ -47,13 +47,12 @@ export function ImageSlider({ images, autoPlayInterval = 5000 }: ImageSliderProp
   };
 
   return (
-    <div 
+    <div
       className="relative w-full h-[600px] overflow-hidden"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      {/* Images */}
       <div className="relative w-full h-full">
         {images.map((image, index) => (
           <div
@@ -71,39 +70,7 @@ export function ImageSlider({ images, autoPlayInterval = 5000 }: ImageSliderProp
             <div className="absolute inset-0 bg-black bg-opacity-30"></div>
           </div>
         ))}
-        
-        {/* Navigation Arrows - Only visible on desktop */}
-        <div className="hidden md:block">
-          <button 
-            onClick={goToPrevious}
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full z-10"
-          >
-            ←
-          </button>
-          <button 
-            onClick={goToNext}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full z-10"
-          >
-            →
-          </button>
-        </div>
       </div>
-
-      {/* Controls */}
-      <button
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-70 p-2 rounded-full"
-        onClick={goToPrevious}
-      >
-        <ChevronLeft className="h-6 w-6 text-primary" />
-      </button>
-      <button
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-70 p-2 rounded-full"
-        onClick={goToNext}
-      >
-        <ChevronRight className="h-6 w-6 text-primary" />
-      </button>
-
-      
     </div>
   );
 }
