@@ -7,7 +7,7 @@ export function RedBanner() {
         <img 
           src="/images/banner-image.jpeg" 
           alt="Banner" 
-          className="w-full h-full object-cover"
+          className="w-full h-40 object-contain"
         />
       </div>
     </div>
