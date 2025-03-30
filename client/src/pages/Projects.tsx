@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { projectImages } from "@/data/slider-images";
 import {
@@ -38,7 +39,7 @@ export default function ProjectsPage() {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-sm text-gray-500 mb-3">{project.location}</p>
+                <p className="text-sm text-gray-500">{project.location}</p>
               </div>
             </div>
           ))}
