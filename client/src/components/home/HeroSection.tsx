@@ -12,13 +12,6 @@ export function HeroSection() {
           LOW VOLTAGE AND BLUEPRINT ENGINEERING EXPERT
         </h2>
       </div>
-      
-      {/* Secondary Banner */}
-      <div className="text-center py-6 bg-gray-100 flex items-center justify-center">
-        <p className="text-2xl text-gray-800 max-w-4xl mx-auto px-4">
-          Providing Professional Engineering Solutions for Commercial, Residential & Industrial Projects
-        </p>
-      </div>
 
       <div className="grid md:grid-cols-3">
         {/* Project Slider (2/3 width on desktop) */}
