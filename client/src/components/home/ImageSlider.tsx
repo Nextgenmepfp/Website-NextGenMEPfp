@@ -29,21 +29,37 @@ export function ImageSlider({ images, autoPlayInterval = 5000 }: ImageSliderProp
   return (
     <div className="relative w-full h-[600px] overflow-hidden">
       {/* Images */}
-      {images.map((image, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentIndex ? "opacity-100" : "opacity-0"
-          }`}
+      <div className="relative w-full h-full">
+        {images.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentIndex ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <img
+              src={image}
+              alt={`Project ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+          </div>
+        ))}
+        
+        {/* Navigation Arrows */}
+        <button 
+          onClick={goToPrevious}
+          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full z-10"
         >
-          <img
-            src={image}
-            alt={`Project ${index + 1}`}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-        </div>
-      ))}
+          ←
+        </button>
+        <button 
+          onClick={goToNext}
+          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full z-10"
+        >
+          →
+        </button>
+      </div>
 
       {/* Controls */}
       <button
