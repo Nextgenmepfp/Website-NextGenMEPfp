@@ -25,7 +25,7 @@ export function HeroSection() {
             <img 
               src={consultantImage} 
               alt="Professional Consultant" 
-              className="object-cover h-[600px] w-full"
+              className="object-cover h-full w-full"
             />
           </div>
         </div>
