@@ -21,11 +21,11 @@ function App() {
           <Route path="/" component={Home} />
           <Route path="/why-choose-us" component={WhyChooseUs} />
           <Route path="/services" component={Services} />
-          <Route path="/services/:serviceId" element={<ServiceDetail />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/testimonials" element={<Testimonials />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/services/:serviceId" element={<ServiceDetail />} /> {/* Added route for service details */}
+          <Route path="/projects" component={Projects} />
+          <Route path="/testimonials" component={Testimonials} />
+          <Route path="/contact">{() => <Contact />}</Route>
+          <Route component={NotFound} />
         </Switch>
       </main>
       <RedBanner />
