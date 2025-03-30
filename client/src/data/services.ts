@@ -1,52 +1,68 @@
-export type Service = {
-  id: number;
-  title: string;
-  description: string;
-  imageUrl: string;
-  icon: string;
-};
+
+import { Service } from '@/types/service';
 
 export const services: Service[] = [
   {
     id: 1,
-    title: "MEP Blueprint Design",
-    description: "Full-service Mechanical, Electrical, and Plumbing blueprint design with BIM integration for complex commercial and institutional buildings. Our designs ensure optimal energy efficiency, code compliance, and system integration for seamless building operation.",
-    imageUrl: "/images/services/WhatsApp Image 2025-03-29 at 19.27.28.jpeg",
-    icon: "fa-pencil-ruler"
+    title: "Infrastructure Backbone",
+    description: "Professional design and installation of fiber optic and copper backbone infrastructure. We provide robust networking foundations for commercial and industrial facilities with future-proof solutions.",
+    imageUrl: "/images/services/backbone.jpg",
+    icon: "fas fa-network-wired"
   },
   {
     id: 2,
-    title: "Low Voltage Systems",
-    description: "Comprehensive low voltage design including structured cabling, access control, surveillance systems, and audiovisual integration. Our expertise in TIA/EIA standards ensures future-proof infrastructure for your telecommunications needs.",
-    imageUrl: "/images/services/WhatsApp Image 2025-03-29 at 19.28.02.jpeg",
-    icon: "fa-network-wired"
+    title: "Voice & Data Systems",
+    description: "Comprehensive voice and data solutions including structured cabling, network design, and implementation. Supporting modern business communication needs with high-performance systems.",
+    imageUrl: "/images/services/voice-data.jpg",
+    icon: "fas fa-phone-laptop"
   },
   {
     id: 3,
-    title: "Fire Alarm & Protection",
-    description: "Advanced fire alarm and suppression system design with detailed riser diagrams, device layouts, and sequence of operations. Our designs adhere to NFPA standards and local fire codes for comprehensive life safety protection.",
-    imageUrl: "/images/services/WhatsApp Image 2025-03-29 at 19.35.21.jpeg",
-    icon: "fa-fire-extinguisher"
+    title: "Building Safety Systems",
+    description: "Advanced BDA (Bi-Directional Amplifier), DOS (Distributed Antenna System), and emergency communication systems. Ensuring reliable communication for first responders and building occupants.",
+    imageUrl: "/images/services/safety.jpg",
+    icon: "fas fa-shield-alt"
   },
   {
     id: 4,
-    title: "Data Center Infrastructure",
-    description: "Specialized MEP design for data centers including precision cooling, redundant power distribution, and comprehensive monitoring systems. Our designs prioritize reliability, scalability, and energy efficiency for mission-critical facilities.",
-    imageUrl: "https://images.unsplash.com/photo-1597138177671-3a8d31815c19?auto=format&fit=crop&w=600&h=400&q=80",
-    icon: "fa-server"
+    title: "Security & Surveillance",
+    description: "State-of-the-art CCTV surveillance and monitoring solutions. Protecting your assets with advanced camera systems, recording solutions, and remote monitoring capabilities.",
+    imageUrl: "/images/services/security.jpg",
+    icon: "fas fa-video"
   },
   {
     id: 5,
-    title: "Building Automation",
-    description: "Intelligent building control systems design for HVAC, lighting, and security integration. Our automation solutions optimize energy usage, enhance occupant comfort, and provide detailed monitoring capabilities for facility management.",
-    imageUrl: "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&h=400&q=80",
-    icon: "fa-robot"
+    title: "Access Control",
+    description: "Modern card access control systems for enhanced security. Features include proximity cards, biometric readers, and integrated management systems for complete facility control.",
+    imageUrl: "/images/services/access.jpg",
+    icon: "fas fa-id-card"
   },
   {
     id: 6,
-    title: "Energy Modeling & Analysis",
-    description: "Comprehensive energy modeling and performance analysis to optimize building systems and reduce operational costs. Our team utilizes advanced simulation tools to evaluate design alternatives and recommend efficient solutions.",
-    imageUrl: "https://images.unsplash.com/photo-1473308822086-710304d7d30c?auto=format&fit=crop&w=600&h=400&q=80",
-    icon: "fa-chart-line"
+    title: "Entertainment Systems",
+    description: "Complete CATV distribution systems and audio-visual solutions. Delivering high-quality entertainment and presentation capabilities for hospitality and commercial environments.",
+    imageUrl: "/images/services/entertainment.jpg",
+    icon: "fas fa-tv"
+  },
+  {
+    id: 7,
+    title: "Wireless Solutions",
+    description: "Enterprise-grade WiFi network design and implementation. Providing seamless coverage, high performance, and reliable connectivity across your entire facility.",
+    imageUrl: "/images/services/wifi.jpg",
+    icon: "fas fa-wifi"
+  },
+  {
+    id: 8,
+    title: "Physical Security",
+    description: "Automated security gate systems and perimeter protection. Integration with access control and surveillance systems for comprehensive security management.",
+    imageUrl: "/images/services/gates.jpg",
+    icon: "fas fa-door-closed"
+  },
+  {
+    id: 9,
+    title: "Communication Systems",
+    description: "Advanced telephone systems and unified communications. Supporting modern business needs with VoIP, PBX, and integrated messaging solutions.",
+    imageUrl: "/images/services/telephone.jpg",
+    icon: "fas fa-phone-alt"
   }
 ];
