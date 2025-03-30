@@ -2,7 +2,7 @@ import { Link } from "wouter";
 
 export function Footer() {
   return (
-    <footer className="bg-[#C41E3A] text-white py-12">
+    <footer className="bg-[#DB0A40] text-white py-12">
       <div className="container px-4 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Company Info */}
