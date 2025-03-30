@@ -1,50 +1,10 @@
 import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { apiRequest } from "@/lib/queryClient";
-import { useState } from "react";
-import { toast } from "@/hooks/use-toast";
 
 export function Footer() {
-  const [email, setEmail] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) {
-      toast({
-        title: "Error",
-        description: "Please enter your email address",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    try {
-      setIsSubmitting(true);
-      const response = await apiRequest("POST", "/api/newsletter", { email });
-      const data = await response.json();
-
-      toast({
-        title: "Success!",
-        description: data.message || "You have successfully subscribed to our newsletter.",
-      });
-      setEmail("");
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: error instanceof Error ? error.message : "Failed to subscribe to newsletter",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <footer className="bg-white py-12 border-t">
       <div className="container px-4 mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
             <Link href="/">
@@ -85,7 +45,9 @@ export function Footer() {
                 'Plumbing Systems',
                 'Fire Protection',
                 'Security Systems',
-                'Low Voltage Systems'
+                'Low Voltage Systems',
+                'Building Management Systems',
+                'Telecommunication Systems'
               ].map((service) => (
                 <li key={service}>
                   <Link href={`/services/${service.toLowerCase().replace(/\s+/g, '-')}`}>
@@ -96,30 +58,6 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
-
-          {/* Newsletter */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-black">Newsletter</h3>
-            <p className="text-black mb-4">
-              Subscribe to our newsletter for the latest updates and industry news.
-            </p>
-            <form onSubmit={handleNewsletterSubmit} className="space-y-4">
-              <Input
-                type="email"
-                placeholder="Your email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="bg-white border-gray-300"
-              />
-              <Button 
-                type="submit" 
-                disabled={isSubmitting}
-                className="w-full bg-[#971B1E] hover:bg-[#7a1618] text-white"
-              >
-                Subscribe
-              </Button>
-            </form>
           </div>
         </div>
 
