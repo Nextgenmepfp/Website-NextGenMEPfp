@@ -53,63 +53,6 @@ export function HeroSection() {
           </div>
         </motion.div>
       </div>
-
-      {/* Low Voltage and Blueprint Section */}
-      <div className="bg-gradient-to-b from-gray-50 to-white py-16 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="p-8 bg-white rounded-2xl shadow-lg transform hover:scale-105 transition-transform duration-300 border border-gray-100">
-              <div className="mb-6">
-                <i className="fas fa-network-wired text-3xl text-primary"></i>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Low Voltage Solutions</h3>
-              <ul className="space-y-3 text-gray-600">
-                <li className="flex items-center">
-                  <i className="fas fa-check text-primary mr-2"></i>
-                  <span>Advanced Security Systems</span>
-                </li>
-                <li className="flex items-center">
-                  <i className="fas fa-check text-primary mr-2"></i>
-                  <span>Structured Data Networks</span>
-                </li>
-                <li className="flex items-center">
-                  <i className="fas fa-check text-primary mr-2"></i>
-                  <span>Smart Building Integration</span>
-                </li>
-                <li className="flex items-center">
-                  <i className="fas fa-check text-primary mr-2"></i>
-                  <span>Audio/Visual Solutions</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="p-8 bg-white rounded-2xl shadow-lg transform hover:scale-105 transition-transform duration-300 border border-gray-100">
-              <div className="mb-6">
-                <i className="fas fa-drafting-compass text-3xl text-primary"></i>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Blueprint Engineering</h3>
-              <ul className="space-y-3 text-gray-600">
-                <li className="flex items-center">
-                  <i className="fas fa-check text-primary mr-2"></i>
-                  <span>Detailed Technical Drawings</span>
-                </li>
-                <li className="flex items-center">
-                  <i className="fas fa-check text-primary mr-2"></i>
-                  <span>3D Modeling & Visualization</span>
-                </li>
-                <li className="flex items-center">
-                  <i className="fas fa-check text-primary mr-2"></i>
-                  <span>Code Compliance Review</span>
-                </li>
-                <li className="flex items-center">
-                  <i className="fas fa-check text-primary mr-2"></i>
-                  <span>Construction Documentation</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
   );
 }
