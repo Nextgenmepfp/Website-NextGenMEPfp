@@ -6,9 +6,9 @@ export function RedBanner() {
     <div className="w-full bg-red-600 h-40 relative overflow-hidden">
       <div className="absolute inset-0 flex items-center justify-center">
         <img 
-          src="/images/banner-with-logos.jpg" 
-          alt="Company logos banner" 
-          className="w-full h-full object-contain"
+          src="/images/banner-image.jpeg" 
+          alt="Banner" 
+          className="w-full h-full object-cover"
         />
       </div>
     </div>
