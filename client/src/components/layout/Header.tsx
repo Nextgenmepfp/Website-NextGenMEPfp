@@ -20,12 +20,12 @@ export function Header() {
       {/* Main Navigation */}
       <nav className="bg-[#F6050A] shadow-lg">
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center h-20">
+          <div className="flex justify-between items-center h-16 md:h-20">
             <Link href="/">
               <img 
                 src="/next-gen-final.jpeg" 
                 alt="NEXTGEN MEPfp Logo" 
-                className="h-16 w-auto cursor-pointer transform hover:scale-105 transition-transform duration-300"
+                className="h-12 md:h-16 w-auto cursor-pointer transform hover:scale-105 transition-transform duration-300"
               />
             </Link>
 
