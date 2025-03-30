@@ -2,7 +2,7 @@ import { Link } from "wouter";
 
 export function Header() {
   return (
-    <header className="w-full">
+    <header className="w-full fixed top-0 z-50">
       {/* Contact Info Bar */}
       <div className="bg-[#FA061A] text-white py-2">
         <div className="container mx-auto px-4 flex flex-wrap justify-between items-center">
