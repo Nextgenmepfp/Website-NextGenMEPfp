@@ -103,18 +103,7 @@ export function ImageSlider({ images, autoPlayInterval = 5000 }: ImageSliderProp
         <ChevronRight className="h-6 w-6 text-primary" />
       </button>
 
-      {/* Indicators */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            className={`h-2 w-2 rounded-full ${
-              index === currentIndex ? "bg-white" : "bg-white bg-opacity-50"
-            }`}
-            onClick={() => setCurrentIndex(index)}
-          ></button>
-        ))}
-      </div>
+      
     </div>
   );
 }
