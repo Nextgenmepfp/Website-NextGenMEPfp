@@ -39,11 +39,15 @@ export function Header() {
           {/* Logo on the left */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-            <img 
-              src="/next-gen-final.jpeg" 
-              alt="NEXTGEN MEPfp Logo" 
-              className="h-12 w-auto"
-            />
+              <svg 
+                width="40" 
+                height="40" 
+                viewBox="0 0 40 40" 
+                className="text-primary"
+              >
+                <path
+                  fill="currentColor"
+                  d="M10,0 L40,0 L30,40 L0,40 L10,0 Z"
                 />
               </svg>
               <span className="ml-3 text-xl font-bold">NEXTGEN MEPfp</span>
