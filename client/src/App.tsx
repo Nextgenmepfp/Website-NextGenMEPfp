@@ -10,6 +10,14 @@ import { Footer } from "@/components/layout/Footer";
 import NotFound from "@/pages/not-found";
 import { Toaster } from "@/components/ui/toaster";
 
+function LogoBanner(props) {
+  return (
+    <div {...props}>
+      <img src="/logo-banner.png" alt="Logo Banner" /> {/* Replace with actual image path */}
+    </div>
+  );
+}
+
 function App() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -26,6 +34,7 @@ function App() {
         </Switch>
       </main>
       <Footer />
+      <LogoBanner className="mt-8" />
       <Toaster />
     </div>
   );
