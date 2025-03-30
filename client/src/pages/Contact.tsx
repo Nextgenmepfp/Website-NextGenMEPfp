@@ -1,7 +1,7 @@
 
 import { ContactSection } from "@/components/home/ContactSection";
 
-export default function ContactPage() {
+export default function Contact() {
   return (
     <div className="py-16">
       <div className="container mx-auto px-4">
