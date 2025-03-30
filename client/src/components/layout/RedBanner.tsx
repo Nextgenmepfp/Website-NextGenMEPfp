@@ -3,6 +3,14 @@ import React from 'react';
 
 export function RedBanner() {
   return (
-    <div className="w-full bg-red-600 h-40" />
+    <div className="w-full bg-red-600 h-40 relative overflow-hidden">
+      <div className="absolute inset-0 flex items-center justify-center">
+        <img 
+          src="/images/banner-with-logos.jpg" 
+          alt="Company logos banner" 
+          className="w-full object-cover"
+        />
+      </div>
+    </div>
   );
 }
