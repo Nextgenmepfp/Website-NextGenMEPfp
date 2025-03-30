@@ -20,13 +20,10 @@ export function Header() {
                 className="h-12 w-auto"
               />
             </Link>
-            <a href="tel:(877) 207-8131" className="text-sm md:text-base">(877) 207-8131</a>
+            <a href="tel:(877) 307-8131" className="text-sm md:text-base">(877) 307-8131</a>
             <a href="mailto:info@nextgenmepfp.com" className="flex items-center text-sm md:text-base">
               <i className="fa fa-envelope mr-2"></i> info@nextgenmepfp.com
             </a>
-          </div>
-          <div className="hidden md:flex items-center">
-            <span className="text-sm">4095 Southern Blvd, Suite #207, West Palm Beach, FL - 33406</span>
           </div>
         </div>
       </div>

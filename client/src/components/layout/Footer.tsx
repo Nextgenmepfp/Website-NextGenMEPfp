@@ -11,7 +11,7 @@ export function Footer() {
 
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!email) {
       toast({
         title: "Error",
@@ -20,17 +20,17 @@ export function Footer() {
       });
       return;
     }
-    
+
     try {
       setIsSubmitting(true);
       const response = await apiRequest("POST", "/api/newsletter", { email });
       const data = await response.json();
-      
+
       toast({
         title: "Success!",
         description: data.message || "You have successfully subscribed to our newsletter.",
       });
-      
+
       setEmail("");
     } catch (error) {
       toast({
@@ -80,7 +80,7 @@ export function Footer() {
               </a>
             </div>
           </div>
-          
+
           {/* Quick Links */}
           <div className="md:col-span-1">
             <h4 className="text-lg font-bold mb-4">Quick Links</h4>
@@ -107,7 +107,7 @@ export function Footer() {
               </li>
             </ul>
           </div>
-          
+
           {/* Services */}
           <div className="md:col-span-1">
             <h4 className="text-lg font-bold mb-4">Our Services</h4>
@@ -132,7 +132,7 @@ export function Footer() {
               </li>
             </ul>
           </div>
-          
+
           {/* Newsletter */}
           <div className="md:col-span-1">
             <h4 className="text-lg font-bold mb-4">Newsletter</h4>
@@ -160,9 +160,9 @@ export function Footer() {
             </form>
           </div>
         </div>
-        
+
         <hr className="border-gray-700 my-8" />
-        
+
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
