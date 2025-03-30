@@ -12,17 +12,10 @@ export function Header() {
       {/* Contact Info Bar */}
       <div className="bg-[#FA061A] text-white py-2">
         <div className="container mx-auto px-4 flex flex-wrap justify-between items-center">
-          <div className="flex items-center space-x-4">
-            <Link href="/" className="flex items-center">
-              <img 
-                src="/next-gen-final.jpeg" 
-                alt="NEXTGEN MEPfp Logo" 
-                className="h-12 w-auto"
-              />
-            </Link>
+          <div className="flex items-center space-x-2"> {/* Reduced spacing */}
             <a href="tel:(877) 307-8131" className="text-sm md:text-base">(877) 307-8131</a>
             <a href="mailto:info@nextgenmepfp.com" className="flex items-center text-sm md:text-base">
-              <i className="fa fa-envelope mr-2"></i> info@nextgenmepfp.com
+              info@nextgenmepfp.com {/* Removed icon */}
             </a>
           </div>
         </div>
