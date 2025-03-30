@@ -56,7 +56,7 @@ export function HeroSection() {
               className="object-cover h-full w-full transition-transform duration-300 hover:scale-105"
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
