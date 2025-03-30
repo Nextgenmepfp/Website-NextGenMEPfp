@@ -1,4 +1,62 @@
 
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% auto;
+  animation: gradient 4s ease infinite;
+}
+
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  h2 {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  p {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  .py-16 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .space-y-4 > * + * {
+    margin-top: 1rem;
+  }
+  
+  button {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+}
+
+/* Improved touch targets for mobile */
+@media (max-width: 768px) {
+  button, 
+  a, 
+  [role="button"] {
+    min-height: 44px;
+    padding: 0.75rem 1rem;
+  }
+  
+  .gap-4 {
+    gap: 1rem;
+  }
+}
+
+
 /* Mobile-first responsive styles */
 @media (max-width: 768px) {
   .container {
