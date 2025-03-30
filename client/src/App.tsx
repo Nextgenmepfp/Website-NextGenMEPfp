@@ -7,6 +7,7 @@ import Testimonials from "@/pages/Testimonials";
 import Contact from "@/pages/Contact";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ClientLogoBanner } from "@/components/layout/ClientLogoBanner";
 import NotFound from "@/pages/not-found";
 import { Toaster } from "@/components/ui/toaster";
 
@@ -25,6 +26,7 @@ function App() {
           <Route component={NotFound} />
         </Switch>
       </main>
+      <ClientLogoBanner />
       <Footer />
       <Toaster />
     </div>
