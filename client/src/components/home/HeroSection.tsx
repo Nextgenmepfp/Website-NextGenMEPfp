@@ -1,106 +1,68 @@
-import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { projects } from "@/data/projects";
+import { ImageSlider } from "@/components/home/ImageSlider";
+import { sliderImages } from "@/data/slider-images";
+import consultantImage from "@assets/choose.png";
 
 export function HeroSection() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const heroProjects = projects.slice(0, 3);
-
-  const showSlide = useCallback((index: number) => {
-    setCurrentSlide((index + heroProjects.length) % heroProjects.length);
-  }, [heroProjects.length]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      showSlide(currentSlide + 1);
-    }, 5000);
-    
-    return () => clearInterval(interval);
-  }, [currentSlide, showSlide]);
-
   return (
-    <section className="relative bg-neutral-200">
+    <section className="relative">
+      {/* Expertise Banner */}
+      <div className="bg-primary text-white py-4 text-center">
+        <h2 className="text-xl md:text-2xl font-bold">
+          LOW VOLTAGE AND BLUEPRINT ENGINEERING EXPERT
+        </h2>
+      </div>
+      
       <div className="grid md:grid-cols-3">
         {/* Project Slider (2/3 width on desktop) */}
-        <div className="md:col-span-2 relative overflow-hidden" style={{ height: "500px" }}>
-          {/* Slider Container */}
-          <div className="relative h-full" id="hero-slider">
-            {heroProjects.map((project, index) => (
-              <div 
-                key={project.id}
-                className={`slide absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                  index === currentSlide ? "opacity-100" : "opacity-0"
-                }`}
-              >
-                <img 
-                  src={project.imageUrl} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-4">
-                  <h3 className="text-lg font-bold">{project.title}</h3>
-                  <p className="text-sm">{project.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="md:col-span-2 relative">
+          {/* Full-size Image Slider */}
+          <ImageSlider images={sliderImages} autoPlayInterval={6000} />
           
-          {/* Slider Navigation */}
-          <button 
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-70 focus:outline-none" 
-            onClick={() => showSlide(currentSlide - 1)}
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-          <button 
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-70 focus:outline-none" 
-            onClick={() => showSlide(currentSlide + 1)}
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
-          
-          {/* Slider Indicators */}
-          <div className="absolute bottom-16 left-0 right-0 flex justify-center space-x-2">
-            {heroProjects.map((_, index) => (
-              <button 
-                key={index}
-                className={`w-3 h-3 rounded-full bg-white focus:outline-none ${
-                  index === currentSlide ? "bg-opacity-100" : "bg-opacity-50"
-                }`}
-                onClick={() => showSlide(index)}
-              ></button>
-            ))}
+          {/* Overlay Text */}
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10 w-full max-w-2xl px-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg">
+              NEXTGEN MEPfp
+            </h1>
+            <p className="text-lg md:text-xl mb-8 drop-shadow-lg max-w-xl mx-auto">
+              Innovative engineering solutions for modern infrastructure
+            </p>
+            <Button 
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-white font-bold rounded-full px-8"
+            >
+              <a href="#contact">Contact Us</a>
+            </Button>
           </div>
         </div>
         
-        {/* Hero CTA (1/3 width on desktop) */}
-        <div className="md:col-span-1 bg-primary text-white p-4 flex flex-col justify-center items-center text-center relative">
-          <div className="absolute inset-0 flex items-center justify-center">
+        {/* Hero Image (1/3 width on desktop) */}
+        <div className="md:col-span-1 bg-white p-4 flex justify-center items-center relative">
+          <div className="w-full h-full flex items-center justify-center">
             <img 
-              src="/images/choose.png" 
+              src={consultantImage} 
               alt="Professional Consultant" 
-              className="object-contain h-full max-h-80 md:max-h-96 z-10"
+              className="object-contain max-h-[600px] w-auto"
             />
           </div>
-          
-          <div className="mt-auto pt-64 md:pt-80 relative z-20 w-full bg-gradient-to-t from-primary to-transparent">
-            <div className="space-y-4 w-full max-w-xs mx-auto">
-              <a href="#waitlist">
-                <Button 
-                  className="w-full bg-white text-primary font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition"
-                >
-                  Request Consultation
-                </Button>
-              </a>
-              <a href="#contact">
-                <Button 
-                  variant="outline" 
-                  className="w-full border-2 border-white text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:bg-opacity-10 transition"
-                >
-                  View Our Portfolio
-                </Button>
-              </a>
+        </div>
+      </div>
+      
+      {/* Key Services Banner */}
+      <div className="bg-neutral-100 py-6">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div>
+              <h3 className="text-xl font-bold text-primary mb-2">Data Centers</h3>
+              <p className="text-gray-700">Comprehensive low voltage systems for modern data centers</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-primary mb-2">Security Systems</h3>
+              <p className="text-gray-700">Advanced surveillance and access control solutions</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-primary mb-2">Fire Alarm Systems</h3>
+              <p className="text-gray-700">State-of-the-art life safety and fire protection</p>
             </div>
           </div>
         </div>

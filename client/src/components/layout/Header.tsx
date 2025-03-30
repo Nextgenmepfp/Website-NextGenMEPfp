@@ -36,6 +36,7 @@ export function Header() {
       {/* Main Navigation */}
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
+          {/* Logo on the left */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <svg 
@@ -53,22 +54,28 @@ export function Header() {
             </Link>
           </div>
           
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex">
-            <ul className="flex space-x-1">
+          {/* Desktop Navigation on the right */}
+          <nav className="hidden md:flex ml-auto">
+            <ul className="flex space-x-6">
               <li>
-                <Link href="/" className="bg-primary text-white px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition">
+                <Link href="/" className="text-gray-800 font-medium hover:text-primary transition">
                   HOME
                 </Link>
               </li>
               <li>
-                <a href="#why-choose-us" className="px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition">WHY CHOOSE US</a>
+                <Link href="/why-choose-us" className="text-gray-800 font-medium hover:text-primary transition">WHY CHOOSE US</Link>
               </li>
               <li>
-                <a href="#services" className="px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition">SERVICES</a>
+                <Link href="/services" className="text-gray-800 font-medium hover:text-primary transition">SERVICES</Link>
               </li>
               <li>
-                <a href="#contact" className="px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition">CONTACT US</a>
+                <Link href="/projects" className="text-gray-800 font-medium hover:text-primary transition">PROJECTS</Link>
+              </li>
+              <li>
+                <Link href="/testimonials" className="text-gray-800 font-medium hover:text-primary transition">TESTIMONIALS</Link>
+              </li>
+              <li>
+                <Link href="/contact" className="bg-primary text-white px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition">CONTACT US</Link>
               </li>
             </ul>
           </nav>
@@ -91,37 +98,55 @@ export function Header() {
                     <Link 
                       href="/" 
                       onClick={() => setIsOpen(false)}
-                      className="block py-2 px-4 bg-primary text-white rounded font-medium"
+                      className="block py-2 px-4 hover:bg-gray-100 rounded font-medium"
                     >
                       HOME
                     </Link>
                   </li>
                   <li>
-                    <a 
-                      href="#why-choose-us" 
+                    <Link 
+                      href="/why-choose-us" 
                       className="block py-2 px-4 hover:bg-gray-100 rounded font-medium"
                       onClick={() => setIsOpen(false)}
                     >
                       WHY CHOOSE US
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a 
-                      href="#services" 
+                    <Link 
+                      href="/services" 
                       className="block py-2 px-4 hover:bg-gray-100 rounded font-medium"
                       onClick={() => setIsOpen(false)}
                     >
                       SERVICES
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a 
-                      href="#contact" 
+                    <Link 
+                      href="/projects" 
                       className="block py-2 px-4 hover:bg-gray-100 rounded font-medium"
                       onClick={() => setIsOpen(false)}
                     >
+                      PROJECTS
+                    </Link>
+                  </li>
+                  <li>
+                    <Link 
+                      href="/testimonials" 
+                      className="block py-2 px-4 hover:bg-gray-100 rounded font-medium"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      TESTIMONIALS
+                    </Link>
+                  </li>
+                  <li>
+                    <Link 
+                      href="/contact" 
+                      className="block py-2 px-4 bg-primary text-white rounded font-medium"
+                      onClick={() => setIsOpen(false)}
+                    >
                       CONTACT US
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
