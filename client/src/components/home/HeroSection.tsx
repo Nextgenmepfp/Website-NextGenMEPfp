@@ -30,16 +30,6 @@ export function HeroSection() {
           <div className="rounded-lg overflow-hidden shadow-2xl">
             <ImageSlider images={sliderImages} autoPlayInterval={6000} />
           </div>
-          
-          {/* Overlay text */}
-          <div className="absolute bottom-8 left-8 right-8 bg-black/50 p-6 rounded-lg backdrop-blur-sm">
-            <h3 className="text-white text-2xl font-bold mb-2">
-              Excellence in Engineering
-            </h3>
-            <p className="text-white/90">
-              Delivering innovative solutions for modern infrastructure needs
-            </p>
-          </div>
         </motion.div>
 
         {/* Hero Image (1/3 width on desktop) */}
