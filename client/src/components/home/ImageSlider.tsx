@@ -27,7 +27,7 @@ export function ImageSlider({ images, autoPlayInterval = 5000 }: ImageSliderProp
   };
 
   return (
-    <div className="relative w-full md:w-11/12 lg:w-10/12 mx-auto h-[400px] md:h-[600px] overflow-hidden rounded-lg shadow-xl">
+    <div className="relative w-full h-[600px] overflow-hidden">
       {/* Images */}
       {images.map((image, index) => (
         <div
@@ -44,37 +44,6 @@ export function ImageSlider({ images, autoPlayInterval = 5000 }: ImageSliderProp
           <div className="absolute inset-0 bg-black bg-opacity-30"></div>
         </div>
       ))}
-
-      {/* Navigation Arrows */}
-      <button
-        onClick={goToPrevious}
-        className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full transition-all duration-200 z-10"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
-      <button
-        onClick={goToNext}
-        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full transition-all duration-200 z-10"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
-
-      {/* Simple Dot Indicators */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            className={`w-2 h-2 rounded-full transition-all duration-200 ${
-              index === currentIndex ? 'bg-white' : 'bg-white/50'
-            }`}
-            onClick={() => setCurrentIndex(index)}
-          />
-        ))}
-      </div>
 
       {/* Controls */}
       <button
