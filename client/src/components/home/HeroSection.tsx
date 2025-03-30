@@ -11,37 +11,28 @@ export function HeroSection() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="relative py-6 bg-gradient-to-b from-white to-gray-50 text-center overflow-hidden"
+        className="relative py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-center overflow-hidden"
       >
-        <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 to-transparent"></div>
-        
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="absolute inset-0 w-full h-full"
-          style={{
-            background: 'radial-gradient(circle at 50% 50%, rgba(255,255,255,0.8) 0%, transparent 70%)',
-          }}
-        />
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-5 animate-pulse"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 via-transparent to-red-500/20"></div>
+          <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-radial from-red-500/10 to-transparent"></div>
+          <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-radial from-red-500/10 to-transparent"></div>
+        </div>
 
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-600 via-red-500 to-red-400 mb-4 px-4 relative z-10 tracking-tight"
+          transition={{ duration: 0.8 }}
+          className="max-w-7xl mx-auto px-4 text-center mb-16"
         >
-          LOW VOLTAGE AND BLUEPRINT
-        </motion.h2>
-        
-        <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: "200px" }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
-          className="h-1 bg-gradient-to-r from-red-600 to-red-400 mx-auto mb-6"
-        />
+          <h2 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-red-500 tracking-tight mb-4">
+            LOW VOLTAGE AND BLUEPRINT
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-red-600 to-red-400 mx-auto"></div>
+        </motion.div>
+
 
         <motion.h3
           initial={{ opacity: 0, y: 20 }}
