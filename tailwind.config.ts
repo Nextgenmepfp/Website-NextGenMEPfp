@@ -22,8 +22,8 @@ export default {
           foreground: "hsl(var(--popover-foreground))",
         },
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "#C41E3A", // Red Corvette color
+          foreground: "#FFFFFF",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
