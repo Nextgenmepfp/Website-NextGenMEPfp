@@ -10,7 +10,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
       {/* Contact Info Bar */}
-      <div className="bg-primary text-white py-2">
+      <div className="bg-[#FA061A] text-white py-2"> {/* Changed primary color to Corvette Red */}
         <div className="container mx-auto px-4 flex flex-wrap justify-between items-center">
           <div className="flex items-center space-x-4">
             <a href="tel:(877) 207-8131" className="flex items-center text-sm md:text-base">
@@ -41,12 +41,12 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-6">
-            <Link href="/" className="text-gray-800 hover:text-primary transition">Home</Link>
-            <Link href="/why-choose-us" className="text-gray-800 hover:text-primary transition">Why Choose Us</Link>
-            <Link href="/services" className="text-gray-800 hover:text-primary transition">Services</Link>
-            <Link href="/projects" className="text-gray-800 hover:text-primary transition">Projects</Link>
-            <Link href="/testimonials" className="text-gray-800 hover:text-primary transition">Testimonials</Link>
-            <Link href="/contact" className="bg-primary text-white px-6 py-2 rounded hover:bg-opacity-90 transition">Contact Us</Link>
+            <Link href="/" className="text-gray-800 hover:text-[#FA061A] transition">Home</Link> {/* Changed hover color to Corvette Red */}
+            <Link href="/why-choose-us" className="text-gray-800 hover:text-[#FA061A] transition">Why Choose Us</Link> {/* Changed hover color to Corvette Red */}
+            <Link href="/services" className="text-gray-800 hover:text-[#FA061A] transition">Services</Link> {/* Changed hover color to Corvette Red */}
+            <Link href="/projects" className="text-gray-800 hover:text-[#FA061A] transition">Projects</Link> {/* Changed hover color to Corvette Red */}
+            <Link href="/testimonials" className="text-gray-800 hover:text-[#FA061A] transition">Testimonials</Link> {/* Changed hover color to Corvette Red */}
+            <Link href="/contact" className="bg-[#FA061A] text-white px-6 py-2 rounded hover:bg-[#E0051A] transition">Contact Us</Link> {/* Changed background and hover colors to Corvette Red shades */}
           </nav>
 
           {/* Mobile Menu Button */}
@@ -62,12 +62,12 @@ export function Header() {
                 <SheetTitle>Menu</SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col space-y-4 mt-6">
-                <Link href="/" className="text-gray-800 hover:text-primary transition">Home</Link>
-                <Link href="/why-choose-us" className="text-gray-800 hover:text-primary transition">Why Choose Us</Link>
-                <Link href="/services" className="text-gray-800 hover:text-primary transition">Services</Link>
-                <Link href="/projects" className="text-gray-800 hover:text-primary transition">Projects</Link>
-                <Link href="/testimonials" className="text-gray-800 hover:text-primary transition">Testimonials</Link>
-                <Link href="/contact" className="bg-primary text-white px-6 py-2 rounded hover:bg-opacity-90 transition">Contact Us</Link>
+                <Link href="/" className="text-gray-800 hover:text-[#FA061A] transition">Home</Link> {/* Changed hover color to Corvette Red */}
+                <Link href="/why-choose-us" className="text-gray-800 hover:text-[#FA061A] transition">Why Choose Us</Link> {/* Changed hover color to Corvette Red */}
+                <Link href="/services" className="text-gray-800 hover:text-[#FA061A] transition">Services</Link> {/* Changed hover color to Corvette Red */}
+                <Link href="/projects" className="text-gray-800 hover:text-[#FA061A] transition">Projects</Link> {/* Changed hover color to Corvette Red */}
+                <Link href="/testimonials" className="text-gray-800 hover:text-[#FA061A] transition">Testimonials</Link> {/* Changed hover color to Corvette Red */}
+                <Link href="/contact" className="bg-[#FA061A] text-white px-6 py-2 rounded hover:bg-[#E0051A] transition">Contact Us</Link> {/* Changed background and hover colors to Corvette Red shades */}
               </nav>
             </SheetContent>
           </Sheet>

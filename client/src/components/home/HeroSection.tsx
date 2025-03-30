@@ -1,4 +1,3 @@
-
 import { ImageSlider } from "@/components/home/ImageSlider";
 import { sliderImages } from "@/data/slider-images";
 import consultantImage from "@assets/choose.png";
@@ -8,8 +7,9 @@ export function HeroSection() {
   return (
     <section className="relative">
       {/* Expertise Banner */}
-      <div className="bg-primary text-white py-4 text-center">
-        <h2 className="text-xl md:text-2xl font-bold">
+      <div className="text-center py-8 bg-[#FA061A] flex items-center justify-center">
+        <img src={Logo} alt="NextGen MEPfp Logo" className="h-16 mr-4" />
+        <h2 className="text-4xl font-bold text-white mb-0">
           LOW VOLTAGE AND BLUEPRINT ENGINEERING EXPERT
         </h2>
       </div>
