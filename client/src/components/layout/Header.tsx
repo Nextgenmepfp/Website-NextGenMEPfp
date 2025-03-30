@@ -1,13 +1,7 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { MenuIcon } from "lucide-react";
 
 export function Header() {
@@ -32,50 +26,29 @@ export function Header() {
           </div>
         </div>
       </div>
-      
+
       {/* Main Navigation */}
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          {/* Logo on the left */}
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center">
+          {/* Logo */}
+          <Link href="/" className="flex items-center">
             <img 
               src="/next-gen-final.jpeg" 
               alt="NEXTGEN MEPfp Logo" 
-              className="h-12 w-auto"
+              className="h-16 w-auto"
             />
-                />
-              </svg>
-              <span className="ml-3 text-xl font-bold">NEXTGEN MEPfp</span>
-            </Link>
-          </div>
-          
-          {/* Desktop Navigation on the right */}
-          <nav className="hidden md:flex ml-auto">
-            <ul className="flex space-x-6">
-              <li>
-                <Link href="/" className="text-gray-800 font-medium hover:text-primary transition">
-                  HOME
-                </Link>
-              </li>
-              <li>
-                <Link href="/why-choose-us" className="text-gray-800 font-medium hover:text-primary transition">WHY CHOOSE US</Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-gray-800 font-medium hover:text-primary transition">SERVICES</Link>
-              </li>
-              <li>
-                <Link href="/projects" className="text-gray-800 font-medium hover:text-primary transition">PROJECTS</Link>
-              </li>
-              <li>
-                <Link href="/testimonials" className="text-gray-800 font-medium hover:text-primary transition">TESTIMONIALS</Link>
-              </li>
-              <li>
-                <Link href="/contact" className="bg-primary text-white px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition">CONTACT US</Link>
-              </li>
-            </ul>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex space-x-6">
+            <Link href="/" className="text-gray-800 hover:text-primary transition">Home</Link>
+            <Link href="/why-choose-us" className="text-gray-800 hover:text-primary transition">Why Choose Us</Link>
+            <Link href="/services" className="text-gray-800 hover:text-primary transition">Services</Link>
+            <Link href="/projects" className="text-gray-800 hover:text-primary transition">Projects</Link>
+            <Link href="/testimonials" className="text-gray-800 hover:text-primary transition">Testimonials</Link>
+            <Link href="/contact" className="bg-primary text-white px-6 py-2 rounded hover:bg-opacity-90 transition">Contact Us</Link>
           </nav>
-          
+
           {/* Mobile Menu Button */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
@@ -86,66 +59,16 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="right">
               <SheetHeader>
-                <SheetTitle>NEXTGEN MEPfp</SheetTitle>
+                <SheetTitle>Menu</SheetTitle>
               </SheetHeader>
-              <div className="py-4">
-                <ul className="space-y-2">
-                  <li>
-                    <Link 
-                      href="/" 
-                      onClick={() => setIsOpen(false)}
-                      className="block py-2 px-4 hover:bg-gray-100 rounded font-medium"
-                    >
-                      HOME
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      href="/why-choose-us" 
-                      className="block py-2 px-4 hover:bg-gray-100 rounded font-medium"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      WHY CHOOSE US
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      href="/services" 
-                      className="block py-2 px-4 hover:bg-gray-100 rounded font-medium"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      SERVICES
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      href="/projects" 
-                      className="block py-2 px-4 hover:bg-gray-100 rounded font-medium"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      PROJECTS
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      href="/testimonials" 
-                      className="block py-2 px-4 hover:bg-gray-100 rounded font-medium"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      TESTIMONIALS
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      href="/contact" 
-                      className="block py-2 px-4 bg-primary text-white rounded font-medium"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      CONTACT US
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+              <nav className="flex flex-col space-y-4 mt-6">
+                <Link href="/" className="text-gray-800 hover:text-primary transition">Home</Link>
+                <Link href="/why-choose-us" className="text-gray-800 hover:text-primary transition">Why Choose Us</Link>
+                <Link href="/services" className="text-gray-800 hover:text-primary transition">Services</Link>
+                <Link href="/projects" className="text-gray-800 hover:text-primary transition">Projects</Link>
+                <Link href="/testimonials" className="text-gray-800 hover:text-primary transition">Testimonials</Link>
+                <Link href="/contact" className="bg-primary text-white px-6 py-2 rounded hover:bg-opacity-90 transition">Contact Us</Link>
+              </nav>
             </SheetContent>
           </Sheet>
         </div>
