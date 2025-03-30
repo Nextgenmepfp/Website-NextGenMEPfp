@@ -20,12 +20,12 @@ export function ServicesSection() {
           {services.map((service) => (
             <div 
               key={service.id}
-              className="rounded-[40px] shadow-lg h-[450px] bg-gray-50 flex flex-col"
+              className="rounded-[40px] shadow-lg h-[450px] bg-white hover:bg-gray-50 transition-all duration-300 transform hover:-translate-y-2 flex flex-col"
             >
               <div className="p-10 text-gray-800 flex-1 flex flex-col justify-between">
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold mb-6">{service.title}</h3>
-                  <p className="text-base mb-10 text-gray-200">
+                  <h3 className="text-2xl font-bold mb-6 text-gray-900">{service.title}</h3>
+                  <p className="text-base mb-10 text-gray-600">
                     {service.description}
                   </p>
                 </div>
