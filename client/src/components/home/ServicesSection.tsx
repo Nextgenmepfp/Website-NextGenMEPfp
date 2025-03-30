@@ -5,7 +5,7 @@ export function ServicesSection() {
   return (
     <section 
       id="services" 
-      className="py-16 relative bg-[#FA061A]"
+      className="py-16 relative bg-primary"
     >
       {/* Dark red background */}
       <div className="container mx-auto px-4 relative z-10">
