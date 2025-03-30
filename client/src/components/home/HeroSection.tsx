@@ -12,10 +12,10 @@ export function HeroSection() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="relative py-12 bg-gradient-to-r from-gray-900 to-black text-center overflow-hidden"
+        className="relative py-12 bg-white text-center overflow-hidden"
       >
         <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-10"></div>
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-0 px-4 relative z-10">
+        <h2 className="text-4xl md:text-5xl font-bold text-[#F6050A] mb-0 px-4 relative z-10">
           LOW VOLTAGE AND BLUEPRINT 
           <span className="block mt-2 bg-gradient-to-r from-[#FA061A] to-red-400 bg-clip-text text-transparent">
             ENGINEERING EXPERT
