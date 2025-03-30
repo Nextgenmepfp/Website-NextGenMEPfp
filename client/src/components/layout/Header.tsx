@@ -10,7 +10,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
       {/* Contact Info Bar */}
-      <div className="bg-[#FA061A] text-white py-2"> {/* Changed primary color to Corvette Red */}
+      <div className="bg-white text-[#FA061A] py-2"> {/* Changed primary color to Corvette Red */}
         <div className="container mx-auto px-4 flex flex-wrap justify-between items-center">
           <div className="flex items-center space-x-4">
             <a href="tel:(877) 207-8131" className="flex items-center text-sm md:text-base">
