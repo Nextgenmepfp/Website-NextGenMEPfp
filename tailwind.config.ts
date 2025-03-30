@@ -4,6 +4,9 @@ export default {
   darkMode: ["class"],
   content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    fontFamily: {
+      'playfair': ['Playfair Display', 'serif'],
+    },
     extend: {
       borderRadius: {
         lg: "var(--radius)",

@@ -16,17 +16,9 @@ export default function Home() {
                 Professional MEP Solutions
               </span>
             </div>
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-8 bg-gradient-to-r from-[#FA061A] to-red-700 bg-clip-text text-transparent animate-gradient tracking-tight">
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-black mb-8 bg-gradient-to-r from-[#FA061A] to-red-700 bg-clip-text text-transparent animate-gradient tracking-wide font-playfair">
               Welcome to NEXTGEN MEPfp
             </h2>
-            <div className="space-y-4">
-              <p className="text-base md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-                We specialize in low voltage system design, blueprint engineering, and MEP solutions
-              </p>
-              <p className="text-base md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                (Mechanical, Electrical, Plumbing) for commercial, institutional, and industrial projects
-              </p>
-            </div>
           </div>
         </div>
       </section>
