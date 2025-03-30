@@ -12,7 +12,7 @@ export function HeroSection() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="relative py-12 bg-white text-center overflow-hidden"
+        className="relative py-6 bg-white text-center overflow-hidden"
       >
         <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-10"></div>
         <h2 className="text-4xl md:text-5xl font-bold text-[#F6050A] mb-0 px-4 relative z-10">
@@ -23,7 +23,7 @@ export function HeroSection() {
         </h2>
       </motion.div>
 
-      <div className="grid md:grid-cols-3 gap-6 max-w-[1920px] mx-auto p-6 bg-gray-50">
+      <div className="grid md:grid-cols-3 gap-4 max-w-[1920px] mx-auto p-4 bg-gray-50">
         {/* Project Slider */}
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
