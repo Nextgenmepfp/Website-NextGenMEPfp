@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer className="bg-white py-12 border-t">
       <div className="container px-4 mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Company Info */}
           <div>
             <Link href="/">
@@ -21,41 +21,28 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-black">Quick Links</h3>
+            <h3 className="text-black font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              {['Home', 'Why Choose Us', 'Services', 'Projects', 'Join Waitlist', 'Contact'].map((item) => (
-                <li key={item}>
-                  <Link href={`/${item.toLowerCase().replace(/\s+/g, '-')}`}>
-                    <span className="text-black hover:text-[#971B1E] transition-colors cursor-pointer">
-                      {item}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Our Services */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-black">Our Services</h3>
-            <ul className="space-y-2">
-              {[
-                'Infrastructure Backbone',
-                'Voice & Data Systems',
-                'Building Safety Systems',
-                'Security & Surveillance',
-                'Access Control',
-                'Building Management Systems',
-                'Telecommunication Systems'
-              ].map((service) => (
-                <li key={service}>
-                  <Link to={`/services/${service.toLowerCase().replace(/\s+/g, '-')}`}>
-                    <span className="text-black hover:text-[#971B1E] transition-colors cursor-pointer">
-                      {service}
-                    </span>
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href="/">
+                  <span className="text-black hover:text-[#971B1E] transition-colors cursor-pointer">Home</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/why-choose-us">
+                  <span className="text-black hover:text-[#971B1E] transition-colors cursor-pointer">Why Choose Us</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/projects">
+                  <span className="text-black hover:text-[#971B1E] transition-colors cursor-pointer">Projects</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact">
+                  <span className="text-black hover:text-[#971B1E] transition-colors cursor-pointer">Contact</span>
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
