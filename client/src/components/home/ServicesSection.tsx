@@ -5,13 +5,13 @@ export function ServicesSection() {
   return (
     <section 
       id="services" 
-      className="py-16 relative bg-primary"
+      className="py-16 relative bg-white"
     >
-      {/* Dark red background */}
+      {/* White background */}
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-white">Our Services</h2>
-          <p className="text-lg text-white max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4 text-primary">Our Services</h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Comprehensive MEP, fire protection, and low voltage solutions for commercial and industrial projects.
           </p>
         </div>
@@ -20,9 +20,9 @@ export function ServicesSection() {
           {services.map((service) => (
             <div 
               key={service.id}
-              className="rounded-[40px] shadow-lg h-[450px] bg-white bg-opacity-5 flex flex-col"
+              className="rounded-[40px] shadow-lg h-[450px] bg-gray-50 flex flex-col"
             >
-              <div className="p-10 text-white flex-1 flex flex-col justify-between">
+              <div className="p-10 text-gray-800 flex-1 flex flex-col justify-between">
                 <div className="text-center">
                   <h3 className="text-2xl font-bold mb-6">{service.title}</h3>
                   <p className="text-base mb-10 text-gray-200">
