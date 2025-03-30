@@ -16,7 +16,7 @@ export default function Home() {
                 Professional MEP Solutions
               </span>
             </div>
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-black mb-8 bg-gradient-to-r from-[#FA061A] to-red-700 bg-clip-text text-transparent animate-gradient tracking-wide font-playfair">
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 bg-gradient-to-r from-[#FA061A] to-red-700 bg-clip-text text-transparent animate-gradient tracking-wide font-playfair">
               Welcome to NEXTGEN MEPfp
             </h2>
           </div>
