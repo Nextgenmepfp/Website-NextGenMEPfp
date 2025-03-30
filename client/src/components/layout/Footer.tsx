@@ -11,7 +11,7 @@ export function Footer() {
               <img src="/images/logo.png" alt="NEXTGEN MEPfp" className="h-12 mb-4" />
             </Link>
             <p className="text-black mb-4">
-              Providing comprehensive MEP, fire protection, and low voltage solutions for commercial and industrial projects.
+              4095 Southern BLVD Suite #207, WEST PALM BEACH, FL 33406
             </p>
             <p className="text-black">
               <a href="tel:(877)307-8131" className="hover:text-[#971B1E] transition-colors">(877) 307-8131</a><br />
