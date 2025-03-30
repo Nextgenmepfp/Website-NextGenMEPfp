@@ -26,7 +26,6 @@ export function Header() {
             </a>
           </div>
           <div className="hidden md:flex items-center">
-            <i className="fa fa-map-marker-alt mr-2"></i>
             <span className="text-sm">4095 Southern Blvd, Suite #207, West Palm Beach, FL - 33406</span>
           </div>
         </div>
