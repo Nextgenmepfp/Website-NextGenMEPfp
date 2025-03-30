@@ -11,11 +11,11 @@ export function HeroSection() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="relative py-6 bg-gradient-to-b from-white to-gray-50 text-center overflow-hidden"
+        className="relative py-3 bg-gradient-to-b from-white to-gray-50 text-center overflow-hidden"
       >
         <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-10"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 to-transparent"></div>
-        
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -34,7 +34,7 @@ export function HeroSection() {
         >
           LOW VOLTAGE AND BLUEPRINT
         </motion.h2>
-        
+
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: "200px" }}
