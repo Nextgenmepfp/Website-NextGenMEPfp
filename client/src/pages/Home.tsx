@@ -16,7 +16,7 @@ export default function Home() {
                 Professional MEP Solutions
               </span>
             </div>
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-[#FA061A] to-red-700 bg-clip-text text-transparent animate-gradient">
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-8 bg-gradient-to-r from-[#FA061A] to-red-700 bg-clip-text text-transparent animate-gradient tracking-tight">
               Welcome to NEXTGEN MEPfp
             </h2>
             <div className="space-y-4">
@@ -26,14 +26,6 @@ export default function Home() {
               <p className="text-base md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
                 (Mechanical, Electrical, Plumbing) for commercial, institutional, and industrial projects
               </p>
-            </div>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <button className="px-8 py-3 bg-[#FA061A] text-white rounded-lg hover:bg-red-700 transition-colors duration-300 shadow-lg">
-                Get Started
-              </button>
-              <button className="px-8 py-3 border-2 border-[#FA061A] text-[#FA061A] rounded-lg hover:bg-red-50 transition-colors duration-300">
-                Learn More
-              </button>
             </div>
           </div>
         </div>
