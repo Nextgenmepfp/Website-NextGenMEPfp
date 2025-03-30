@@ -37,23 +37,19 @@ export function Header() {
       {/* Main Navigation */}
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          {/* Logo */}
+          {/* Company Name */}
           <Link href="/" className="flex items-center">
-            <img 
-              src="/next-gen-final.jpeg" 
-              alt="NEXTGEN MEPfp Logo" 
-              className="h-16 w-auto"
-            />
+            <span className="text-2xl font-bold text-gray-800">NEXTGEN MEPfp</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-6">
-            <Link href="/" className="text-gray-800 hover:text-white text-lg transition-colors">Home</Link> 
-            <Link href="/why-choose-us" className="text-gray-800 hover:text-white text-lg transition-colors">Why Choose Us</Link> 
-            <Link href="/services" className="text-gray-800 hover:text-white text-lg transition-colors">Services</Link> 
-            <Link href="/projects" className="text-gray-800 hover:text-white text-lg transition-colors">Projects</Link> 
-            <Link href="/testimonials" className="text-gray-800 hover:text-white text-lg transition-colors">Testimonials</Link> 
-            <Link href="/contact" className="bg-[#FA061A] text-white px-6 py-2 rounded hover:bg-[#E0051A] transition">Contact Us</Link> 
+          <nav className="hidden md:flex items-center space-x-8">
+            <Link href="/" className="text-gray-800 hover:text-white text-lg font-medium relative after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-white after:bottom-[-4px] after:left-0 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">Home</Link> 
+            <Link href="/why-choose-us" className="text-gray-800 hover:text-white text-lg font-medium relative after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-white after:bottom-[-4px] after:left-0 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">Why Choose Us</Link> 
+            <Link href="/services" className="text-gray-800 hover:text-white text-lg font-medium relative after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-white after:bottom-[-4px] after:left-0 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">Services</Link> 
+            <Link href="/projects" className="text-gray-800 hover:text-white text-lg font-medium relative after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-white after:bottom-[-4px] after:left-0 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">Projects</Link> 
+            <Link href="/testimonials" className="text-gray-800 hover:text-white text-lg font-medium relative after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-white after:bottom-[-4px] after:left-0 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">Testimonials</Link> 
+            <Link href="/contact" className="bg-[#FA061A] text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-[#E0051A] transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">Contact Us</Link> 
           </nav>
 
           {/* Mobile Menu Button */}
