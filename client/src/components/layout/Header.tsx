@@ -18,7 +18,7 @@ export function Header() {
       </div>
 
       {/* Main Navigation */}
-      <nav className="bg-[#F6050A] shadow-lg">
+      <nav className="bg-[#F6050A] shadow-lg"> {/* Changed background color here */}
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-20">
             <Link href="/">
@@ -29,13 +29,13 @@ export function Header() {
               />
             </Link>
 
-            <div className="hidden md:flex space-x-6">
-              <Link href="/" className="px-6 py-2 text-white hover:bg-red-700 hover:scale-105 font-medium rounded-full transition-all duration-300">Home</Link>
-              <Link href="/why-choose-us" className="px-6 py-2 text-white hover:bg-red-700 hover:scale-105 font-medium rounded-full transition-all duration-300">Why Choose Us</Link>
-              <Link href="/services" className="px-6 py-2 text-white hover:bg-red-700 hover:scale-105 font-medium rounded-full transition-all duration-300">Services</Link>
-              <Link href="/projects" className="px-6 py-2 text-white hover:bg-red-700 hover:scale-105 font-medium rounded-full transition-all duration-300">Projects</Link>
-              <Link href="/testimonials" className="px-6 py-2 text-white hover:bg-red-700 hover:scale-105 font-medium rounded-full transition-all duration-300">Testimonials</Link>
-              <Link href="/contact-us" className="px-6 py-2 bg-[#FA061A] text-white rounded-full hover:bg-red-700 hover:scale-105 transition-all duration-300">Contact Us</Link>
+            <div className="hidden md:flex space-x-8">
+              <Link href="/" className="text-white hover:text-[#FA061A] font-medium transition-colors duration-300">Home</Link> {/* Changed text color */}
+              <Link href="/why-choose-us" className="text-white hover:text-[#FA061A] font-medium transition-colors duration-300">Why Choose Us</Link> {/* Changed text color */}
+              <Link href="/services" className="text-white hover:text-[#FA061A] font-medium transition-colors duration-300">Services</Link> {/* Changed text color */}
+              <Link href="/projects" className="text-white hover:text-[#FA061A] font-medium transition-colors duration-300">Projects</Link> {/* Changed text color */}
+              <Link href="/testimonials" className="text-white hover:text-[#FA061A] font-medium transition-colors duration-300">Testimonials</Link> {/* Changed text color */}
+              <Link href="/contact-us" className="px-6 py-2 bg-[#FA061A] text-white rounded-full hover:bg-red-700 transition-colors duration-300">Contact Us</Link>
             </div>
           </div>
         </div>
