@@ -23,7 +23,7 @@ export function Header() {
           <div className="flex justify-between items-center h-16 md:h-20">
             <Link href="/">
               <img 
-                src="/next-gen-final.jpeg" 
+                src="/images/logo.jpeg" 
                 alt="NEXTGEN MEPfp Logo" 
                 className="h-12 md:h-16 w-auto cursor-pointer transform hover:scale-105 transition-transform duration-300"
               />
