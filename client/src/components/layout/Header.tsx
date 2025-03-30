@@ -20,9 +20,7 @@ export function Header() {
                 className="h-12 w-auto"
               />
             </Link>
-            <a href="tel:(877) 207-8131" className="flex items-center text-sm md:text-base">
-              <i className="fa fa-phone mr-2"></i> (877) 207-8131
-            </a>
+            <a href="tel:(877) 207-8131" className="text-sm md:text-base">(877) 207-8131</a>
             <a href="mailto:info@nextgenmepfp.com" className="flex items-center text-sm md:text-base">
               <i className="fa fa-envelope mr-2"></i> info@nextgenmepfp.com
             </a>
