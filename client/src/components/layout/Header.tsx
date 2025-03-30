@@ -14,140 +14,40 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md">
-      {/* Contact Info Bar */}
-      <div className="bg-primary text-white py-2">
-        <div className="container mx-auto px-4 flex flex-wrap justify-between items-center">
-          <div className="flex items-center space-x-4">
-            <a href="tel:(877) 207-8131" className="flex items-center text-sm md:text-base">
-              <i className="fa fa-phone mr-2"></i> (877) 207-8131
-            </a>
-            <a href="mailto:info@nextgenmepfp.com" className="flex items-center text-sm md:text-base">
-              <i className="fa fa-envelope mr-2"></i> info@nextgenmepfp.com
-            </a>
-          </div>
-          <div className="hidden md:flex items-center">
-            <i className="fa fa-map-marker-alt mr-2"></i>
-            <span className="text-sm">4095 Southern Blvd, Suite #207, West Palm Beach, FL - 33406</span>
-          </div>
+    <header className="bg-red-700">
+      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <nav className="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
+          <Link href="/" className="mr-5 text-white hover:text-gray-200">
+            Home
+          </Link>
+          <Link href="/why-choose-us" className="mr-5 text-white hover:text-gray-200">
+            Why Choose Us
+          </Link>
+          <Link href="/services" className="mr-5 text-white hover:text-gray-200">
+            Services
+          </Link>
+          <Link href="/projects" className="mr-5 text-white hover:text-gray-200">
+            Projects
+          </Link>
+          <Link href="/testimonials" className="mr-5 text-white hover:text-gray-200">
+            Testimonials
+          </Link>
+          <Link href="/contact" className="text-white hover:text-gray-200">
+            Contact Us
+          </Link>
+        </nav>
+        <div className="flex order-first lg:order-none lg:w-1/5 items-center lg:items-center lg:justify-center mb-4 md:mb-0">
+          <Link href="/" className="flex items-center text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-10 h-10 text-white p-2 bg-red-800 rounded-full" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <span className="ml-3 text-xl font-bold">NEXTGEN MEPfp</span>
+          </Link>
         </div>
-      </div>
-      
-      {/* Main Navigation */}
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex justify-between items-center">
-          {/* Logo on the left */}
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center">
-            <img 
-              src="/next-gen-final.jpeg" 
-              alt="NEXTGEN MEPfp Logo" 
-              className="h-12 w-auto"
-            />
-                />
-              </svg>
-              <span className="ml-3 text-xl font-bold">NEXTGEN MEPfp</span>
-            </Link>
-          </div>
-          
-          {/* Desktop Navigation on the right */}
-          <nav className="hidden md:flex ml-auto">
-            <ul className="flex space-x-6">
-              <li>
-                <Link href="/" className="text-gray-800 font-medium hover:text-primary transition">
-                  HOME
-                </Link>
-              </li>
-              <li>
-                <Link href="/why-choose-us" className="text-gray-800 font-medium hover:text-primary transition">WHY CHOOSE US</Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-gray-800 font-medium hover:text-primary transition">SERVICES</Link>
-              </li>
-              <li>
-                <Link href="/projects" className="text-gray-800 font-medium hover:text-primary transition">PROJECTS</Link>
-              </li>
-              <li>
-                <Link href="/testimonials" className="text-gray-800 font-medium hover:text-primary transition">TESTIMONIALS</Link>
-              </li>
-              <li>
-                <Link href="/contact" className="bg-primary text-white px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition">CONTACT US</Link>
-              </li>
-            </ul>
-          </nav>
-          
-          {/* Mobile Menu Button */}
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
-                <MenuIcon className="h-6 w-6" />
-                <span className="sr-only">Toggle menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right">
-              <SheetHeader>
-                <SheetTitle>NEXTGEN MEPfp</SheetTitle>
-              </SheetHeader>
-              <div className="py-4">
-                <ul className="space-y-2">
-                  <li>
-                    <Link 
-                      href="/" 
-                      onClick={() => setIsOpen(false)}
-                      className="block py-2 px-4 hover:bg-gray-100 rounded font-medium"
-                    >
-                      HOME
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      href="/why-choose-us" 
-                      className="block py-2 px-4 hover:bg-gray-100 rounded font-medium"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      WHY CHOOSE US
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      href="/services" 
-                      className="block py-2 px-4 hover:bg-gray-100 rounded font-medium"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      SERVICES
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      href="/projects" 
-                      className="block py-2 px-4 hover:bg-gray-100 rounded font-medium"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      PROJECTS
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      href="/testimonials" 
-                      className="block py-2 px-4 hover:bg-gray-100 rounded font-medium"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      TESTIMONIALS
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      href="/contact" 
-                      className="block py-2 px-4 bg-primary text-white rounded font-medium"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      CONTACT US
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </SheetContent>
-          </Sheet>
+        <div className="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
+          <Button variant="outline" className="text-white border-white hover:bg-red-800">
+            Get Started
+          </Button>
         </div>
       </div>
     </header>
