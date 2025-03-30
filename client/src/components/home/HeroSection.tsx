@@ -12,46 +12,39 @@ export function HeroSection() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="relative py-12 bg-gradient-to-r from-gray-900 to-black text-center overflow-hidden"
+        className="text-center py-8 bg-white flex items-center justify-center shadow-sm"
       >
-        <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-10"></div>
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-0 px-4 relative z-10">
-          LOW VOLTAGE AND BLUEPRINT 
-          <span className="block mt-2 bg-gradient-to-r from-[#FA061A] to-red-400 bg-clip-text text-transparent">
-            ENGINEERING EXPERT
-          </span>
+        <h2 className="text-4xl font-bold text-[#FA061A] mb-0 px-4">
+          LOW VOLTAGE AND BLUEPRINT ENGINEERING EXPERT
         </h2>
       </motion.div>
 
-      <div className="grid md:grid-cols-3 gap-6 max-w-[1920px] mx-auto p-6 bg-gray-50">
-        {/* Project Slider */}
+      <div className="grid md:grid-cols-3 max-w-[1920px] mx-auto">
+        {/* Project Slider (2/3 width on desktop) */}
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="md:col-span-2 relative"
+          className="md:col-span-2 relative bg-white p-4"
         >
-          <div className="rounded-xl overflow-hidden shadow-2xl transform hover:scale-[1.01] transition-transform duration-500">
+          <div className="rounded-lg overflow-hidden shadow-2xl">
             <ImageSlider images={sliderImages} autoPlayInterval={6000} />
           </div>
         </motion.div>
 
-        {/* Hero Image */}
+        {/* Hero Image (1/3 width on desktop) */}
         <motion.div 
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="md:col-span-1"
+          className="md:col-span-1 bg-white p-4"
         >
-          <div className="h-full rounded-xl overflow-hidden shadow-2xl bg-white">
-            <div className="relative h-full group">
-              <img 
-                src={consultantImage} 
-                alt="Professional Consultant" 
-                className="object-cover h-full w-full transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
+          <div className="h-full rounded-lg overflow-hidden shadow-xl">
+            <img 
+              src={consultantImage} 
+              alt="Professional Consultant" 
+              className="object-cover h-full w-full transition-transform duration-300 hover:scale-105"
+            />
           </div>
         </motion.div>
       </div>
