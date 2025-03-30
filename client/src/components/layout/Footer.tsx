@@ -40,12 +40,11 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4 text-black">Our Services</h3>
             <ul className="space-y-2">
               {[
-                'Mechanical Systems',
-                'Electrical Systems',
-                'Plumbing Systems',
-                'Fire Protection',
-                'Security Systems',
-                'Low Voltage Systems',
+                'Infrastructure Backbone',
+                'Voice & Data Systems',
+                'Building Safety Systems',
+                'Security & Surveillance',
+                'Access Control',
                 'Building Management Systems',
                 'Telecommunication Systems'
               ].map((service) => (
