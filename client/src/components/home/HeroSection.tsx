@@ -11,28 +11,37 @@ export function HeroSection() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="relative py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-center overflow-hidden"
+        className="relative py-6 bg-gradient-to-b from-white to-gray-50 text-center overflow-hidden"
       >
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-5 animate-pulse"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 via-transparent to-red-500/20"></div>
-          <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-radial from-red-500/10 to-transparent"></div>
-          <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-radial from-red-500/10 to-transparent"></div>
-        </div>
+        <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 to-transparent"></div>
 
         <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="absolute inset-0 w-full h-full"
+          style={{
+            background: 'radial-gradient(circle at 50% 50%, rgba(255,255,255,0.8) 0%, transparent 70%)',
+          }}
+        />
+
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="max-w-7xl mx-auto px-4 text-center mb-16"
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-600 via-red-500 to-red-400 mb-4 px-4 relative z-10 tracking-tight"
         >
-          <h2 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-red-500 tracking-tight mb-4">
-            LOW VOLTAGE AND BLUEPRINT
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-red-600 to-red-400 mx-auto"></div>
-        </motion.div>
+          LOW VOLTAGE AND BLUEPRINT
+        </motion.h2>
 
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "200px" }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+          className="h-1 bg-gradient-to-r from-red-600 to-red-400 mx-auto mb-6"
+        />
 
         <motion.h3
           initial={{ opacity: 0, y: 20 }}
@@ -90,6 +99,76 @@ export function HeroSection() {
             </div>
           </div>
         </motion.div>
+      </div>
+
+      {/* Low Voltage and Blueprint Section */}
+      <div className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-20">
+        <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-5"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 via-transparent to-red-500/10"></div>
+
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="group relative"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-red-600/20 to-red-700/20 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+              <div className="relative bg-gray-900/80 backdrop-blur-sm p-8 rounded-xl border border-gray-700/50 hover:border-red-500/30 transition-all duration-300">
+                <div className="flex items-center mb-6">
+                  <i className="fas fa-network-wired text-4xl text-red-500 mr-4"></i>
+                  <h3 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">Low Voltage Solutions</h3>
+                </div>
+                <div className="space-y-4">
+                  {['Advanced Security Systems', 'Structured Data Networks', 'Smart Building Integration', 'Audio/Visual Solutions'].map((item, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors duration-200"
+                    >
+                      <div className="h-1 w-3 bg-red-500"></div>
+                      <span>{item}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="group relative"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-red-700/20 to-red-600/20 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+              <div className="relative bg-gray-900/80 backdrop-blur-sm p-8 rounded-xl border border-gray-700/50 hover:border-red-500/30 transition-all duration-300">
+                <div className="flex items-center mb-6">
+                  <i className="fas fa-drafting-compass text-4xl text-red-500 mr-4"></i>
+                  <h3 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">Blueprint Engineering</h3>
+                </div>
+                <div className="space-y-4">
+                  {['Detailed Technical Drawings', '3D Modeling & Visualization', 'Code Compliance Review', 'Construction Documentation'].map((item, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors duration-200"
+                    >
+                      <div className="h-1 w-3 bg-red-500"></div>
+                      <span>{item}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );
