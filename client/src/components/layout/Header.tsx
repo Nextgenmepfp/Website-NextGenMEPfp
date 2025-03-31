@@ -3,10 +3,10 @@ import { Link } from "wouter";
 export function Header() {
   return (
     <header className="w-full">
-      {/* Main Navigation */}
-      <nav className="bg-[#F6050A] shadow-lg fixed top-0 left-0 right-0 z-50">
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center text-white py-2">
+      {/* Contact Info Bar */}
+      <div className="bg-[#FA061A] text-white py-2">
+        <div className="container mx-auto px-4 flex flex-wrap justify-between items-center">
+          <div className="flex items-center space-x-4">
             <a href="tel:(877) 307-8131" className="text-sm md:text-base hover:text-gray-200 transition-colors">
               <i className="fas fa-phone mr-2"></i>(877) 307-8131
             </a>
@@ -14,7 +14,13 @@ export function Header() {
               <i className="fas fa-envelope mr-2"></i>info@nextgenmepfp.com
             </a>
           </div>
-          <div className="flex justify-between items-center h-16 md:h-20"> {/* Main Navigation */}
+        </div>
+      </div>
+
+      {/* Main Navigation */}
+      <nav className="bg-[#F6050A] shadow-lg">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between items-center h-16 md:h-20">
             <Link href="/">
               <img 
                 src="/next-gen-final.jpeg" 
@@ -22,7 +28,7 @@ export function Header() {
                 className="h-10 md:h-16 w-auto cursor-pointer transform hover:scale-105 transition-transform duration-300"
               />
             </Link>
-            <button className="md:hidden text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}> {/*This button assumes the existence of a state variable 'mobileMenuOpen' and a function to toggle it.  This needs to be added to the component if not already present. */}
+            <button className="md:hidden text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
               <i className="fas fa-bars text-2xl"></i>
             </button>
 
