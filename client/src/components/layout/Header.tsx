@@ -1,8 +1,20 @@
-import { Link } from "react-router-dom";
+
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const handleNavClick = (path: string) => {
+    setMobileMenuOpen(false);
+    navigate(path);
+  };
+
   return (
     <header className="w-full">
       {/* Contact Info Bar */}
@@ -23,7 +35,7 @@ export function Header() {
       <nav className="bg-[#F6050A] shadow-lg">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16 md:h-20">
-            <Link href="/">
+            <Link to="/">
               <img 
                 src="/next-gen-final.jpeg" 
                 alt="NEXTGEN MEPfp Logo" 
@@ -31,32 +43,37 @@ export function Header() {
               />
             </Link>
             <div className="flex items-center">
-              <button className="md:hidden text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+              <button 
+                className="md:hidden text-white p-2" 
+                onClick={toggleMobileMenu}
+                aria-label="Toggle mobile menu"
+              >
                 <i className="fas fa-bars text-2xl"></i>
               </button>
-            </div>
-
-            <div className="hidden md:flex space-x-6">
-              <Link href="/" className="px-6 py-2 text-white hover:bg-red-700 hover:scale-105 font-medium rounded-full transition-all duration-300">Home</Link>
-              <Link href="/why-choose-us" className="px-6 py-2 text-white hover:bg-red-700 hover:scale-105 font-medium rounded-full transition-all duration-300">Why Choose Us</Link>
-              <Link href="/services" className="px-6 py-2 text-white hover:bg-red-700 hover:scale-105 font-medium rounded-full transition-all duration-300">Services</Link>
-              <Link href="/projects" className="px-6 py-2 text-white hover:bg-red-700 hover:scale-105 font-medium rounded-full transition-all duration-300">Projects</Link>
-              <Link href="/contact" className="px-6 py-2 bg-[#FA061A] text-white rounded-full hover:bg-red-700 hover:scale-105 transition-all duration-300">Contact Us</Link>
+              <div className="hidden md:flex space-x-6">
+                <Link to="/" className="px-6 py-2 text-white hover:bg-red-700 hover:scale-105 font-medium rounded-full transition-all duration-300">Home</Link>
+                <Link to="/why-choose-us" className="px-6 py-2 text-white hover:bg-red-700 hover:scale-105 font-medium rounded-full transition-all duration-300">Why Choose Us</Link>
+                <Link to="/services" className="px-6 py-2 text-white hover:bg-red-700 hover:scale-105 font-medium rounded-full transition-all duration-300">Services</Link>
+                <Link to="/projects" className="px-6 py-2 text-white hover:bg-red-700 hover:scale-105 font-medium rounded-full transition-all duration-300">Projects</Link>
+                <Link to="/contact" className="px-6 py-2 bg-[#FA061A] text-white rounded-full hover:bg-red-700 hover:scale-105 transition-all duration-300">Contact Us</Link>
+              </div>
             </div>
           </div>
+
+          {/* Mobile Menu */}
+          {mobileMenuOpen && (
+            <div className="md:hidden absolute top-[100px] left-0 w-full bg-[#F6050A] shadow-lg z-50">
+              <div className="flex flex-col p-4 space-y-3">
+                <button onClick={() => handleNavClick("/")} className="text-white py-2 text-left hover:bg-red-700 px-4 rounded">Home</button>
+                <button onClick={() => handleNavClick("/why-choose-us")} className="text-white py-2 text-left hover:bg-red-700 px-4 rounded">Why Choose Us</button>
+                <button onClick={() => handleNavClick("/services")} className="text-white py-2 text-left hover:bg-red-700 px-4 rounded">Services</button>
+                <button onClick={() => handleNavClick("/projects")} className="text-white py-2 text-left hover:bg-red-700 px-4 rounded">Projects</button>
+                <button onClick={() => handleNavClick("/contact")} className="text-white py-2 text-left hover:bg-red-700 px-4 rounded">Contact Us</button>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
-      {mobileMenuOpen && (
-              <div className="absolute top-16 left-0 w-full bg-[#F6050A] shadow-lg md:hidden">
-                <div className="flex flex-col p-4">
-                  <Link href="/" className="text-white py-2">Home</Link>
-                  <Link href="/why-choose-us" className="text-white py-2">Why Choose Us</Link>
-                  <Link href="/services" className="text-white py-2">Services</Link>
-                  <Link href="/projects" className="text-white py-2">Projects</Link>
-                  <Link href="/contact" className="text-white py-2">Contact Us</Link>
-                </div>
-              </div>
-            )}
     </header>
   );
 }
