@@ -47,13 +47,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // API routes for contact form
   app.post("/api/contact", async (req: Request, res: Response) => {
     try {
-      const validatedData = insertContactSchema.parse({
-        name: req.body.name,
-        email: req.body.email,
-        phone: req.body.phone || '',
-        subject: req.body.subject,
-        message: req.body.message
-      });
+      const validatedData = insertContactSchema.parse(req.body);
       const entry = await storage.createContactEntry(validatedData);
       
       // Send SMS notification
