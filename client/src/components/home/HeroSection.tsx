@@ -30,9 +30,9 @@ export function HeroSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-600 via-red-500 to-red-400 mb-4 px-4 relative z-10 tracking-tight"
+          className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-600 via-red-500 to-red-400 mb-4 px-4 relative z-10 tracking-tight whitespace-nowrap"
         >
-          LOW VOLTAGE AND BLUEPRINT
+          LOW VOLTAGE AND BLUEPRINT ENGINEERING EXPERT
         </motion.h2>
 
         <motion.div
@@ -43,7 +43,8 @@ export function HeroSection() {
           className="h-1 bg-gradient-to-r from-red-600 to-red-400 mx-auto mb-6"
         />
 
-        <motion.h3
+        {/* Removed the following h3 tag as its content is now part of h2 */}
+        {/*<motion.h3
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -51,7 +52,7 @@ export function HeroSection() {
           className="text-2xl md:text-3xl font-bold text-gray-800 text-center tracking-wide relative z-10"
         >
           ENGINEERING EXPERT
-        </motion.h3>
+        </motion.h3>*/}
 
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
