@@ -1,3 +1,4 @@
+
 import { Link } from "wouter";
 import { useState } from "react";
 
@@ -42,11 +43,12 @@ export function Header() {
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="flex-1 flex justify-end md:hidden">
-              <button className="text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-                <i className={`fas ${mobileMenuOpen ? 'fa-times' : 'fa-bars'} text-2xl`}></i>
-              </button>
-            </div>
+            <button 
+              className="md:hidden text-white"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              <i className={`fas ${mobileMenuOpen ? 'fa-times' : 'fa-bars'} text-2xl`}></i>
+            </button>
           </div>
 
           {/* Mobile Menu */}
