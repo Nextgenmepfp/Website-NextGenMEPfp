@@ -96,7 +96,7 @@ export function ContactSection() {
                     </div>
                     <div className="ml-4">
                       <h4 className="font-medium">Phone Number</h4>
-                      <p className="text-gray-600">5618751404</p>
+                      <p className="text-gray-600">(877)-307-8131</p>
                     </div>
                   </div>
                   <div className="flex items-start">

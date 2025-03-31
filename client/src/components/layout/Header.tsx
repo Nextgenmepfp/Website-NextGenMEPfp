@@ -7,8 +7,8 @@ export function Header() {
       <div className="bg-[#FA061A] text-white py-2">
         <div className="container mx-auto px-4 flex flex-wrap justify-between items-center">
           <div className="flex items-center space-x-4">
-            <a href="tel:5618751404" className="text-sm md:text-base hover:text-gray-200 transition-colors">
-              <i className="fas fa-phone mr-2"></i>5618751404
+            <a href="tel:(877)-307-8131" className="text-sm md:text-base hover:text-gray-200 transition-colors">
+              <i className="fas fa-phone mr-2"></i>(877)-307-8131
             </a>
             <a href="mailto:info@nextgenmepfp.com" className="text-sm md:text-base hover:text-gray-200 transition-colors">
               <i className="fas fa-envelope mr-2"></i>info@nextgenmepfp.com
@@ -39,7 +39,6 @@ export function Header() {
               <Link href="/why-choose-us" className="px-6 py-2 text-white hover:bg-red-700 hover:scale-105 font-medium rounded-full transition-all duration-300">Why Choose Us</Link>
               <Link href="/services" className="px-6 py-2 text-white hover:bg-red-700 hover:scale-105 font-medium rounded-full transition-all duration-300">Services</Link>
               <Link href="/projects" className="px-6 py-2 text-white hover:bg-red-700 hover:scale-105 font-medium rounded-full transition-all duration-300">Projects</Link>
-              <Link href="/testimonials" className="px-6 py-2 text-white hover:bg-red-700 hover:scale-105 font-medium rounded-full transition-all duration-300">Testimonials</Link>
               <Link href="/contact" className="px-6 py-2 bg-[#FA061A] text-white rounded-full hover:bg-red-700 hover:scale-105 transition-all duration-300">Contact Us</Link>
             </div>
           </div>
