@@ -68,9 +68,7 @@ export function Footer() {
                 </span>
               </Link>
             </div>
-            <Link href="/"> {/* Added logo to the bottom bar */}
-              <img src="/images/logo.png" alt="NEXTGEN MEPfp" className="h-8 w-auto" />
-            </Link>
+            <img src="/images/logo.png" alt="NEXTGEN MEPfp" className="h-6 w-auto" />
           </div>
         </div>
       </div>
