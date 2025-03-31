@@ -59,15 +59,6 @@ export function ServicesSection() {
                   <p className="text-gray-600 mb-8 flex-grow">
                     {service.description}
                   </p>
-                  
-                  <div className="mt-auto">
-                    <Button 
-                      className="bg-white hover:bg-primary/5 text-primary border-2 border-primary/10 hover:border-primary/20 font-medium rounded-full px-6 py-2 transition-all duration-300"
-                    >
-                      Learn More
-                      <i className="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform duration-300"></i>
-                    </Button>
-                  </div>
                 </div>
               </div>
             </motion.div>
