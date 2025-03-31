@@ -6,17 +6,11 @@ export function Footer() {
       <div className="container px-4 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Company Info */}
-          <div>
-            <Link href="/">
-              <img src="/images/logo.png" alt="NEXTGEN MEPfp" className="h-12 mb-4" />
-            </Link>
-            <p className="text-black mb-4">
-              4095 Southern BLVD Suite #207, WEST PALM BEACH, FL 33406
-            </p>
-            <p className="text-black">
-              <a href="tel:(877)307-8131" className="hover:text-[#971B1E] transition-colors">(877) 307-8131</a><br />
-              <a href="mailto:info@nextgenmepfp.com" className="hover:text-[#971B1E] transition-colors">info@nextgenmepfp.com</a>
-            </p>
+          <div className="flex flex-col gap-4">
+            <img src="/logo/next-gen-final.jpeg" alt="NextGen MEPfp Logo" className="w-40 h-auto" />
+            <p className="text-black">4095 Southern BLVD Suite #207, WEST PALM BEACH, FL 33406</p>
+            <p className="text-black">(877) 307-8131</p>
+            <p className="text-black">info@nextgenmepfp.com</p>
           </div>
 
           {/* Quick Links */}
