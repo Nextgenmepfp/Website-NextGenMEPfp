@@ -18,7 +18,7 @@ export function Header() {
       </div>
 
       {/* Main Navigation */}
-      <nav className="bg-[#F6050A] shadow-lg fixed top-0 left-0 right-0 z-50">
+      <nav className="bg-[#F6050A] shadow-lg">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-16 md:h-20">
             <Link href="/">
