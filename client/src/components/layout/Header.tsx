@@ -4,7 +4,7 @@ export function Header() {
   return (
     <header className="w-full fixed top-0 z-50">
       {/* Contact Info Bar */}
-      <div className="bg-[#FA061A] text-white py-2">
+      <div className="bg-[#C41E3A] text-white py-2">
         <div className="container mx-auto px-4 flex flex-wrap justify-between items-center">
           <div className="flex items-center space-x-4">
             <a href="tel:(877) 307-8131" className="text-sm md:text-base hover:text-gray-200 transition-colors">
