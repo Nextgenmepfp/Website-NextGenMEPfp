@@ -1,4 +1,4 @@
-import { Route, Switch } from "wouter";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "@/pages/Home";
 import WhyChooseUs from "@/pages/WhyChooseUs";
 import Services from "@/pages/Services";
@@ -10,28 +10,30 @@ import { Footer } from "@/components/layout/Footer";
 import { RedBanner } from "@/components/layout/RedBanner";
 import NotFound from "@/pages/not-found";
 import { Toaster } from "@/components/ui/toaster";
-import ServiceDetail from '@/pages/ServiceDetail'; // Added import
+import ServiceDetail from '@/pages/ServiceDetail';
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow">
-        <Switch>
-          <Route path="/" component={Home} />
-          <Route path="/why-choose-us" component={WhyChooseUs} />
-          <Route path="/services" component={Services} />
-          <Route path="/services/:serviceId" element={<ServiceDetail />} /> {/* Added route for service details */}
-          <Route path="/projects" component={Projects} />
-          <Route path="/testimonials" component={Testimonials} />
-          <Route path="/contact" component={Contact} />
-          <Route component={NotFound} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/why-choose-us" element={<WhyChooseUs />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/services/:serviceId" element={<ServiceDetail />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </main>
       <RedBanner />
       <Footer />
       <Toaster />
     </div>
+    </BrowserRouter>
   );
 }
 
