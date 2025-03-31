@@ -10,7 +10,7 @@ export function Footer() {
             <img 
               src="/next-gen-final.jpeg" 
               alt="NEXTGEN MEPfp Logo" 
-              className="h-12 w-auto"
+              className="h-8 w-auto"
             />
             <p className="text-black">4095 Southern BLVD Suite #207, WEST PALM BEACH, FL 33406</p>
             <p className="text-black">(877) 307-8131</p>
