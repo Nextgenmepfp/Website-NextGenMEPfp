@@ -39,12 +39,12 @@ export const contacts = pgTable("contacts", {
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
-export const insertContactSchema = createInsertSchema(contacts).pick({
-  name: true,
-  email: true,
-  phone: true,
-  subject: true,
-  message: true,
+export const insertContactSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Please enter a valid email address"),
+  phone: z.string().optional(),
+  subject: z.string().min(2, "Subject must be at least 2 characters"),
+  message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
 export const newsletter = pgTable("newsletter", {
