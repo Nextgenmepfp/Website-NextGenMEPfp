@@ -140,7 +140,7 @@ button, a {
   }
 
   body {
-    @apply antialiased bg-background text-foreground;
+    @apply antialiased bg-background text-foreground pt-24;
     font-family: Inter, system-ui, sans-serif;
   }
 }
