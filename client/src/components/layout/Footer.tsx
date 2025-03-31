@@ -68,7 +68,6 @@ export function Footer() {
                 </span>
               </Link>
             </div>
-            <img src="/images/logo.png" alt="NEXTGEN MEPfp" className="h-6 w-auto" />
           </div>
         </div>
       </div>
