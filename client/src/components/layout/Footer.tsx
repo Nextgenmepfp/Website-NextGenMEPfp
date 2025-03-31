@@ -7,11 +7,6 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Company Info */}
           <div className="flex flex-col gap-4">
-            <img 
-              src="/next-gen-final.jpeg" 
-              alt="NEXTGEN MEPfp Logo" 
-              className="h-8 w-auto"
-            />
             <p className="text-black">4095 Southern BLVD Suite #207, WEST PALM BEACH, FL 33406</p>
             <p className="text-black">(877) 307-8131</p>
             <p className="text-black">info@nextgenmepfp.com</p>
