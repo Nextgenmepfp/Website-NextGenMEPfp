@@ -1,6 +1,8 @@
-import { Link } from "wouter";
+import Link from "next/link";
+import { useState } from "react";
 
 export function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <header className="w-full">
       {/* Contact Info Bar */}
@@ -44,6 +46,17 @@ export function Header() {
           </div>
         </div>
       </nav>
+      {mobileMenuOpen && (
+              <div className="absolute top-16 left-0 w-full bg-[#F6050A] shadow-lg md:hidden">
+                <div className="flex flex-col p-4">
+                  <Link href="/" className="text-white py-2">Home</Link>
+                  <Link href="/why-choose-us" className="text-white py-2">Why Choose Us</Link>
+                  <Link href="/services" className="text-white py-2">Services</Link>
+                  <Link href="/projects" className="text-white py-2">Projects</Link>
+                  <Link href="/contact" className="text-white py-2">Contact Us</Link>
+                </div>
+              </div>
+            )}
     </header>
   );
 }
