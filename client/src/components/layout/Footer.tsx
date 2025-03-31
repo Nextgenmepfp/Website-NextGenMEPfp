@@ -10,7 +10,7 @@ export function Footer() {
             <img 
               src="/next-gen-final.jpeg" 
               alt="NEXTGEN MEPfp Logo" 
-              className="h-12 w-auto cursor-pointer transform hover:scale-105 transition-transform duration-300"
+              className="h-12 w-auto cursor-pointer"
             />
             <p className="text-black">4095 Southern BLVD Suite #207, WEST PALM BEACH, FL 33406</p>
             <p className="text-black">(877) 307-8131</p>
