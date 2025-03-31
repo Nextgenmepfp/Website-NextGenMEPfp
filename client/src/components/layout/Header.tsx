@@ -20,7 +20,7 @@ export function Header() {
       {/* Main Navigation */}
       <nav className="bg-[#F6050A] shadow-lg">
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center h-16 md:h-20">
+          <div className="flex items-center justify-between h-16 md:h-20">
             <Link href="/">
               <img 
                 src="/next-gen-final.jpeg" 
@@ -28,9 +28,11 @@ export function Header() {
                 className="h-10 md:h-16 w-auto cursor-pointer transform hover:scale-105 transition-transform duration-300"
               />
             </Link>
-            <button className="md:hidden text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-              <i className="fas fa-bars text-2xl"></i>
-            </button>
+            <div className="flex items-center">
+              <button className="md:hidden text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                <i className="fas fa-bars text-2xl"></i>
+              </button>
+            </div>
 
             <div className="hidden md:flex space-x-6">
               <Link href="/" className="px-6 py-2 text-white hover:bg-red-700 hover:scale-105 font-medium rounded-full transition-all duration-300">Home</Link>
