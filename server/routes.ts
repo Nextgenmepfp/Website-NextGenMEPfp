@@ -9,7 +9,7 @@ import {
 import twilio from 'twilio';
 
 const twilioClient = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
-const BUSINESS_PHONE = '(877) 307-8131'; // Your business phone number
+const BUSINESS_PHONE = '5618751404'; // Your business phone number
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // API routes for waitlist
