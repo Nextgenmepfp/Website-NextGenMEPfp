@@ -47,7 +47,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // API routes for contact form
   app.post("/api/contact", async (req: Request, res: Response) => {
     try {
-      const validatedData = insertContactSchema.parse(req.body);
+      console.log("Received contact form data:", req.body);
+      const validatedData = insertContactSchema.parse({
+        name: req.body.name,
+        email: req.body.email,
+        phone: req.body.phone,
+        subject: req.body.subject,
+        message: req.body.message
+      });
+      
       const entry = await storage.createContactEntry(validatedData);
       
       // Send SMS notification
@@ -63,6 +71,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         data: entry 
       });
     } catch (error) {
+      console.error("Contact form validation error:", error);
       res.status(400).json({ 
         success: false, 
         message: "Invalid data submitted",
