@@ -1,10 +1,10 @@
 import {
   users, type User, type InsertUser,
   waitlist, type Waitlist, type InsertWaitlist,
-  newsletter, type Newsletter, type InsertNewsletter
+  newsletter, type Newsletter, type InsertNewsletter,
+  type Contact, type InsertContact
 } from "@shared/schema";
 import { createPool } from 'mysql2/promise';
-import type { Contact, InsertContact } from '@shared/schema';
 
 // Create MySQL connection pool
 const pool = createPool({
@@ -114,23 +114,34 @@ export class MemStorage implements IStorage {
   }
 }
 
-export class Storage {
-  async createContactEntry(contact: InsertContact): Promise<Contact> {
-    const [result] = await pool.execute(
-      'INSERT INTO contacts (name, email, phone, subject, message, created_at) VALUES (?, ?, ?, ?, ?, ?)',
-      [contact.name, contact.email, contact.phone, contact.subject, contact.message, new Date()]
-    );
+export class Storage implements IStorage {
+  async createContactEntry(entry: InsertContact): Promise<Contact> {
+    const connection = await pool.getConnection();
+    try {
+      const [result] = await connection.execute(
+        'INSERT INTO contacts (name, email, phone, subject, message) VALUES (?, ?, ?, ?, ?)',
+        [entry.name, entry.email, entry.phone || null, entry.subject, entry.message]
+      );
 
-    return {
-      id: (result as any).insertId,
-      ...contact,
-      createdAt: new Date()
-    };
+      const insertId = (result as any).insertId;
+      return {
+        id: insertId,
+        ...entry,
+        createdAt: new Date()
+      };
+    } finally {
+      connection.release();
+    }
   }
 
   async getContactEntries(): Promise<Contact[]> {
-    const [rows] = await pool.execute('SELECT * FROM contacts');
-    return rows as Contact[];
+    const connection = await pool.getConnection();
+    try {
+      const [rows] = await connection.execute('SELECT * FROM contacts ORDER BY created_at DESC');
+      return rows as Contact[];
+    } finally {
+      connection.release();
+    }
   }
   async getUser(id: number): Promise<User | undefined> {
     throw new Error("Method not implemented.");
