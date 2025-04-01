@@ -58,13 +58,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       const entry = await storage.createContactEntry(validatedData);
       
-      // Send SMS notification
-      await twilioClient.messages.create({
-        body: `New Contact Form Submission:\nName: ${validatedData.name}\nEmail: ${validatedData.email}\nPhone: ${validatedData.phone}\nSubject: ${validatedData.subject}\nMessage: ${validatedData.message}`,
-        to: BUSINESS_PHONE,
-        from: process.env.TWILIO_PHONE_NUMBER
-      });
-
       res.status(201).json({ 
         success: true, 
         message: "Message sent successfully", 
