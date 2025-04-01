@@ -16,8 +16,21 @@ const pool = createPool({
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
-  connectTimeout: 60000
+  connectTimeout: 60000,
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
+
+// Test the connection
+pool.getConnection()
+  .then(connection => {
+    console.log('Database connected successfully');
+    connection.release();
+  })
+  .catch(err => {
+    console.error('Error connecting to the database:', err.message);
+  });
 
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
