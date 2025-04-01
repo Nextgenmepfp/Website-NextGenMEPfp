@@ -17,7 +17,9 @@ const pool = createPool({
   connectionLimit: 10,
   queueLimit: 0,
   connectTimeout: 60000,
-  ssl: true
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
 
 // Test the connection
