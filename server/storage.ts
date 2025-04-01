@@ -1,9 +1,18 @@
 import {
   users, type User, type InsertUser,
   waitlist, type Waitlist, type InsertWaitlist,
-  contacts, type Contact, type InsertContact,
+  // contacts, type Contact, type InsertContact, //Removed as replaced by new import
   newsletter, type Newsletter, type InsertNewsletter
 } from "@shared/schema";
+import { createClient } from '@libsql/client';
+import { drizzle } from 'drizzle-orm/libsql';
+import { contacts, type Contact, type InsertContact } from '@shared/schema';
+
+const client = createClient({
+  url: process.env.DATABASE_URL || 'file:contacts.db',
+});
+
+export const db = drizzle(client);
 
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
@@ -26,23 +35,23 @@ export interface IStorage {
 export class MemStorage implements IStorage {
   private users: Map<number, User>;
   private waitlistEntries: Map<number, Waitlist>;
-  private contactEntries: Map<number, Contact>;
+  // private contactEntries: Map<number, Contact>; //Removed
   private newsletterEntries: Map<number, Newsletter>;
 
   currentUserId: number;
   currentWaitlistId: number;
-  currentContactId: number;
+  // currentContactId: number; //Removed
   currentNewsletterId: number;
 
   constructor() {
     this.users = new Map();
     this.waitlistEntries = new Map();
-    this.contactEntries = new Map();
+    // this.contactEntries = new Map(); //Removed
     this.newsletterEntries = new Map();
 
     this.currentUserId = 1;
     this.currentWaitlistId = 1;
-    this.currentContactId = 1;
+    // this.currentContactId = 1; //Removed
     this.currentNewsletterId = 1;
   }
 
@@ -66,8 +75,8 @@ export class MemStorage implements IStorage {
   // Waitlist methods
   async createWaitlistEntry(entry: InsertWaitlist): Promise<Waitlist> {
     const id = this.currentWaitlistId++;
-    const waitlistEntry: Waitlist = { 
-      ...entry, 
+    const waitlistEntry: Waitlist = {
+      ...entry,
       id,
       createdAt: new Date()
     };
@@ -79,21 +88,6 @@ export class MemStorage implements IStorage {
     return Array.from(this.waitlistEntries.values());
   }
 
-  // Contact methods
-  async createContactEntry(entry: InsertContact): Promise<Contact> {
-    const id = this.currentContactId++;
-    const contactEntry: Contact = { 
-      ...entry, 
-      id,
-      createdAt: new Date()
-    };
-    this.contactEntries.set(id, contactEntry);
-    return contactEntry;
-  }
-
-  async getContactEntries(): Promise<Contact[]> {
-    return Array.from(this.contactEntries.values());
-  }
 
   // Newsletter methods
   async createNewsletterEntry(entry: InsertNewsletter): Promise<Newsletter> {
@@ -107,8 +101,8 @@ export class MemStorage implements IStorage {
     }
 
     const id = this.currentNewsletterId++;
-    const newsletterEntry: Newsletter = { 
-      ...entry, 
+    const newsletterEntry: Newsletter = {
+      ...entry,
       id,
       createdAt: new Date()
     };
@@ -121,4 +115,40 @@ export class MemStorage implements IStorage {
   }
 }
 
-export const storage = new MemStorage();
+
+export class Storage implements IStorage {
+  async createContactEntry(contact: InsertContact): Promise<Contact> {
+    const result = await db.insert(contacts).values({
+      ...contact,
+      createdAt: new Date()
+    }).returning();
+    return result[0];
+  }
+
+  async getContactEntries(): Promise<Contact[]> {
+    return db.select().from(contacts).all();
+  }
+  async getUser(id: number): Promise<User | undefined> {
+    throw new Error("Method not implemented.");
+  }
+  async getUserByUsername(username: string): Promise<User | undefined> {
+    throw new Error("Method not implemented.");
+  }
+  async createUser(user: InsertUser): Promise<User> {
+    throw new Error("Method not implemented.");
+  }
+  async createWaitlistEntry(entry: InsertWaitlist): Promise<Waitlist> {
+    throw new Error("Method not implemented.");
+  }
+  async getWaitlistEntries(): Promise<Waitlist[]> {
+    throw new Error("Method not implemented.");
+  }
+  async createNewsletterEntry(entry: InsertNewsletter): Promise<Newsletter> {
+    throw new Error("Method not implemented.");
+  }
+  async getNewsletterEntries(): Promise<Newsletter[]> {
+    throw new Error("Method not implemented.");
+  }
+}
+
+export const storage = new Storage();
