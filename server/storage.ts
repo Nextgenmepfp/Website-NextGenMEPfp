@@ -8,11 +8,11 @@ import { createPool } from 'mysql2/promise';
 
 // Create MySQL connection pool
 const pool = createPool({
-  host: process.env.REPLIT_DB_HOST || '0.0.0.0',
-  port: parseInt(process.env.REPLIT_DB_PORT || '3306'),
-  user: process.env.REPLIT_DB_USERNAME,
-  password: process.env.REPLIT_DB_PASSWORD,
-  database: process.env.REPLIT_DB_NAME,
+  host: process.env.MYSQL_HOST,
+  port: 3306,
+  user: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  database: process.env.MYSQL_DATABASE,
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
