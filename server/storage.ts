@@ -1,18 +1,21 @@
 import {
   users, type User, type InsertUser,
   waitlist, type Waitlist, type InsertWaitlist,
-  // contacts, type Contact, type InsertContact, //Removed as replaced by new import
   newsletter, type Newsletter, type InsertNewsletter
 } from "@shared/schema";
-import { createClient } from '@libsql/client';
-import { drizzle } from 'drizzle-orm/libsql';
-import { contacts, type Contact, type InsertContact } from '@shared/schema';
+import { createPool } from 'mysql2/promise';
+import type { Contact, InsertContact } from '@shared/schema';
 
-const client = createClient({
-  url: process.env.DATABASE_URL || 'file:contacts.db',
+// Create MySQL connection pool
+const pool = createPool({
+  host: process.env.MYSQL_HOST,
+  user: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  database: process.env.MYSQL_DATABASE,
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
 });
-
-export const db = drizzle(client);
 
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
@@ -35,23 +38,19 @@ export interface IStorage {
 export class MemStorage implements IStorage {
   private users: Map<number, User>;
   private waitlistEntries: Map<number, Waitlist>;
-  // private contactEntries: Map<number, Contact>; //Removed
   private newsletterEntries: Map<number, Newsletter>;
 
   currentUserId: number;
   currentWaitlistId: number;
-  // currentContactId: number; //Removed
   currentNewsletterId: number;
 
   constructor() {
     this.users = new Map();
     this.waitlistEntries = new Map();
-    // this.contactEntries = new Map(); //Removed
     this.newsletterEntries = new Map();
 
     this.currentUserId = 1;
     this.currentWaitlistId = 1;
-    // this.currentContactId = 1; //Removed
     this.currentNewsletterId = 1;
   }
 
@@ -115,18 +114,23 @@ export class MemStorage implements IStorage {
   }
 }
 
-
-export class Storage implements IStorage {
+export class Storage {
   async createContactEntry(contact: InsertContact): Promise<Contact> {
-    const result = await db.insert(contacts).values({
+    const [result] = await pool.execute(
+      'INSERT INTO contacts (name, email, phone, subject, message, created_at) VALUES (?, ?, ?, ?, ?, ?)',
+      [contact.name, contact.email, contact.phone, contact.subject, contact.message, new Date()]
+    );
+
+    return {
+      id: (result as any).insertId,
       ...contact,
       createdAt: new Date()
-    }).returning();
-    return result[0];
+    };
   }
 
   async getContactEntries(): Promise<Contact[]> {
-    return db.select().from(contacts).all();
+    const [rows] = await pool.execute('SELECT * FROM contacts');
+    return rows as Contact[];
   }
   async getUser(id: number): Promise<User | undefined> {
     throw new Error("Method not implemented.");
