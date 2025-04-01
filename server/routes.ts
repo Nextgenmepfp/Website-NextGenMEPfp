@@ -55,11 +55,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
         subject: req.body.subject,
         message: req.body.message
       });
-      
+
       const entry = await storage.createContactEntry(validatedData);
-      
+
       res.status(201).json({ 
-        success: true, 
+        success: true,
         message: "Message sent successfully", 
         data: entry 
       });
