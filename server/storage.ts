@@ -8,16 +8,12 @@ import { createPool } from 'mysql2/promise';
 
 // Create MySQL connection pool
 const pool = createPool({
-  host: process.env.MYSQL_HOST?.split(':')[0],
-  port: parseInt(process.env.MYSQL_HOST?.split(':')[1] || '3306'),
-  user: process.env.MYSQL_USER,
-  password: process.env.MYSQL_PASSWORD,
-  database: process.env.MYSQL_DATABASE,
+  uri: process.env.DATABASE_URL,
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
-  connectTimeout: 10000,
-  acquireTimeout: 10000,
+  enableKeepAlive: true,
+  keepAliveInitialDelay: 0
 });
 
 export interface IStorage {
