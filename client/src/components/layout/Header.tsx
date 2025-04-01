@@ -55,6 +55,7 @@ export function Header() {
                 <Link to="/why-choose-us" className="px-6 py-2 text-white hover:bg-red-700 hover:scale-105 font-medium rounded-full transition-all duration-300">Why Choose Us</Link>
                 <Link to="/services" className="px-6 py-2 text-white hover:bg-red-700 hover:scale-105 font-medium rounded-full transition-all duration-300">Services</Link>
                 <Link to="/projects" className="px-6 py-2 text-white hover:bg-red-700 hover:scale-105 font-medium rounded-full transition-all duration-300">Projects</Link>
+                <Link to="/3d-models" className="px-6 py-2 text-white hover:bg-red-700 hover:scale-105 font-medium rounded-full transition-all duration-300">3D Models</Link>
                 <Link to="/contact" className="px-6 py-2 bg-[#FA061A] text-white rounded-full hover:bg-red-700 hover:scale-105 transition-all duration-300">Contact Us</Link>
               </div>
             </div>
@@ -68,6 +69,7 @@ export function Header() {
                 <button onClick={() => handleNavClick("/why-choose-us")} className="text-white py-2 text-left hover:bg-red-700 px-4 rounded">Why Choose Us</button>
                 <button onClick={() => handleNavClick("/services")} className="text-white py-2 text-left hover:bg-red-700 px-4 rounded">Services</button>
                 <button onClick={() => handleNavClick("/projects")} className="text-white py-2 text-left hover:bg-red-700 px-4 rounded">Projects</button>
+                <button onClick={() => handleNavClick("/3d-models")} className="text-white py-2 text-left hover:bg-red-700 px-4 rounded">3D Models</button>
                 <button onClick={() => handleNavClick("/contact")} className="text-white py-2 text-left hover:bg-red-700 px-4 rounded">Contact Us</button>
               </div>
             </div>
