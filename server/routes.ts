@@ -71,7 +71,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
 
       await transporter.sendMail({
-        from: process.env.EMAIL_USER,
+        from: '"NextGen MEP" <noreply@nextgenmepfp.org>',
         to: 'info@nextgenmepfp.org',
         subject: `New Contact Form Submission: ${validatedData.subject}`,
         html: `
