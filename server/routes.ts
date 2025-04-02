@@ -7,6 +7,7 @@ import {
   insertNewsletterSchema 
 } from "@shared/schema";
 import twilio from 'twilio';
+import nodemailer from 'nodemailer';
 
 const twilioClient = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 const BUSINESS_PHONE = '(877)-307-8131'; // Your business phone number
@@ -57,6 +58,32 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
 
       const entry = await storage.createContactEntry(validatedData);
+
+      // Send email notification
+      const transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 587,
+        secure: false,
+        auth: {
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_APP_PASSWORD
+        }
+      });
+
+      await transporter.sendMail({
+        from: process.env.EMAIL_USER,
+        to: 'info@nextgenmepfp.org',
+        subject: `New Contact Form Submission: ${validatedData.subject}`,
+        html: `
+          <h2>New Contact Form Submission</h2>
+          <p><strong>Name:</strong> ${validatedData.name}</p>
+          <p><strong>Email:</strong> ${validatedData.email}</p>
+          <p><strong>Phone:</strong> ${validatedData.phone || 'Not provided'}</p>
+          <p><strong>Subject:</strong> ${validatedData.subject}</p>
+          <p><strong>Message:</strong></p>
+          <p>${validatedData.message}</p>
+        `
+      });
 
       res.status(201).json({ 
         success: true,
