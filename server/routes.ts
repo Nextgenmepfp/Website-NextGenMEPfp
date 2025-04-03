@@ -61,16 +61,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       // Send email notification
       const transporter = nodemailer.createTransport({
-        host: "smtpout.secureserver.net",
-        port: 587,
+        host: "relay-hosting.secureserver.net",
+        port: 25,
         secure: false,
         auth: {
           user: process.env.SMTP_USER,
           pass: process.env.SMTP_PASS
         },
         tls: {
-          rejectUnauthorized: false,
-          ciphers: 'SSLv3'
+          rejectUnauthorized: false
         }
       });
 
