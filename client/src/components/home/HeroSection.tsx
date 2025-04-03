@@ -60,11 +60,11 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="flex justify-center gap-4 mt-6"
         >
-          <div className="px-4 py-2 bg-red-600 rounded-lg shadow-sm">
-            <span className="text-white font-bold text-lg">15+ Years Experience</span>
+          <div className="px-4 py-2 bg-red-100 rounded-lg shadow-sm">
+            <span className="text-red-600 font-bold text-lg">15+ Years Experience</span>
           </div>
-          <div className="px-4 py-2 bg-red-600 rounded-lg shadow-sm">
-            <span className="text-white font-bold text-lg">100% Success Rate</span>
+          <div className="px-4 py-2 bg-red-100 rounded-lg shadow-sm">
+            <span className="text-red-600 font-bold text-lg">100% Success Rate</span>
           </div>
         </motion.div>
       </motion.div>
