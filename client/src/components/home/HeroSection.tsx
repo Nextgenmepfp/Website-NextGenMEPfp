@@ -11,7 +11,7 @@ export function HeroSection() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="relative py-3 bg-red-600 text-center overflow-hidden"
+        className="relative py-3 bg-gradient-to-b from-white to-gray-50 text-center overflow-hidden"
       >
         <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-10"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 to-transparent"></div>
@@ -60,11 +60,11 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="flex justify-center gap-4 mt-6"
         >
-          <div className="px-4 py-2 bg-red-100 rounded-lg shadow-sm">
-            <span className="text-red-600 font-bold text-lg">15+ Years Experience</span>
+          <div className="px-4 py-2 bg-red-50/50 rounded-lg">
+            <span className="text-[#FA061A] font-semibold text-lg">15+ Years Experience</span>
           </div>
-          <div className="px-4 py-2 bg-red-100 rounded-lg shadow-sm">
-            <span className="text-red-600 font-bold text-lg">100% Success Rate</span>
+          <div className="px-4 py-2 bg-red-50/50 rounded-lg">
+            <span className="text-[#FA061A] font-semibold text-lg">100% Success Rate</span>
           </div>
         </motion.div>
       </motion.div>
