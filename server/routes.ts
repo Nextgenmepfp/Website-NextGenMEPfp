@@ -60,28 +60,47 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const entry = await storage.createContactEntry(validatedData);
 
       // Send email notification
+      console.log('Setting up email transport with:', process.env.SMTP_USER);
+      
       const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
           user: process.env.SMTP_USER,
           pass: process.env.SMTP_PASS
-        }
+        },
+        debug: true, // Enable debug logs
+        logger: true // Log to console
       });
 
-      await transporter.sendMail({
-        from: '"NextGen MEP" <noreply@nextgenmepfp.org>',
-        to: 'info@nextgenmepfp.org',
-        subject: `New Contact Form Submission: ${validatedData.subject}`,
-        html: `
-          <h2>New Contact Form Submission</h2>
-          <p><strong>Name:</strong> ${validatedData.name}</p>
-          <p><strong>Email:</strong> ${validatedData.email}</p>
-          <p><strong>Phone:</strong> ${validatedData.phone || 'Not provided'}</p>
-          <p><strong>Subject:</strong> ${validatedData.subject}</p>
-          <p><strong>Message:</strong></p>
-          <p>${validatedData.message}</p>
-        `
-      });
+      // Verify connection configuration
+      try {
+        await transporter.verify();
+        console.log('SMTP connection verified successfully');
+      } catch (error) {
+        console.error('SMTP connection verification failed:', error);
+        throw error;
+      }
+
+      try {
+        const info = await transporter.sendMail({
+          from: `"NextGen MEP" <${process.env.SMTP_USER}>`,
+          to: process.env.SMTP_USER, // Send to the same email for testing
+          subject: `New Contact Form Submission: ${validatedData.subject}`,
+          html: `
+            <h2>New Contact Form Submission</h2>
+            <p><strong>Name:</strong> ${validatedData.name}</p>
+            <p><strong>Email:</strong> ${validatedData.email}</p>
+            <p><strong>Phone:</strong> ${validatedData.phone || 'Not provided'}</p>
+            <p><strong>Subject:</strong> ${validatedData.subject}</p>
+            <p><strong>Message:</strong></p>
+            <p>${validatedData.message}</p>
+          `
+        });
+        console.log('Email sent successfully:', info);
+      } catch (error) {
+        console.error('Failed to send email:', error);
+        throw error;
+      }
 
       res.status(201).json({ 
         success: true,
