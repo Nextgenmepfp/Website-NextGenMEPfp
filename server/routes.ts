@@ -67,7 +67,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         port: parseInt(process.env.SMTP_PORT),
         secure: false,
         auth: {
-          user: process.env.BREVO_KEY,
+          user: process.env.BREVO_SMTP_USERNAME,
           pass: process.env.BREVO_KEY
         },
         debug: true, // Enable debug logs
