@@ -63,10 +63,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
       console.log('Setting up email transport with:', process.env.SMTP_USER);
       
       const transporter = nodemailer.createTransport({
-        service: 'gmail',
+        host: process.env.SMTP_HOST,
+        port: parseInt(process.env.SMTP_PORT),
+        secure: false,
         auth: {
-          user: process.env.SMTP_USER,
-          pass: process.env.SMTP_PASS
+          user: process.env.BREVO_KEY,
+          pass: process.env.BREVO_KEY
         },
         debug: true, // Enable debug logs
         logger: true // Log to console
