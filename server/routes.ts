@@ -68,12 +68,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
       
       const transporter = nodemailer.createTransport({
-        host: process.env.SMTP_HOST,
-        port: parseInt(process.env.SMTP_PORT || '587'),
+        host: 'smtp-relay.brevo.com',
+        port: 587,
         secure: false,
         auth: {
-          user: process.env.SMTP_USER,
-          pass: process.env.SMTP_PASS
+          user: '895fd1001@smtp-brevo.com',
+          pass: 'bTM3jNLSmIWJPOwZ'
         },
         debug: true, // Enable debug logs
         logger: true // Log to console
