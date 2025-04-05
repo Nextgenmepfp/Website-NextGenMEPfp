@@ -63,12 +63,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
       console.log('Setting up email transport with:', process.env.SMTP_USER);
       
       const transporter = nodemailer.createTransport({
-        host: "smtp-relay.brevo.com",
-        port: 587,
+        host: process.env.SMTP_HOST,
+        port: parseInt(process.env.SMTP_PORT || '587'),
         secure: false,
         auth: {
-          user: "info@nextgenmepfp.org",
-          pass: "bTM3jNLSmtWJPOwZ"
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PASS
         },
         debug: true, // Enable debug logs
         logger: true // Log to console
