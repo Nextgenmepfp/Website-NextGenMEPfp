@@ -60,7 +60,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const entry = await storage.createContactEntry(validatedData);
 
       // Send email notification
-      console.log('Setting up email transport with:', process.env.SMTP_USER);
+      console.log('Email Configuration:', {
+        host: process.env.SMTP_HOST,
+        port: process.env.SMTP_PORT,
+        user: process.env.SMTP_USER,
+        // Don't log the password for security
+      });
       
       const transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
