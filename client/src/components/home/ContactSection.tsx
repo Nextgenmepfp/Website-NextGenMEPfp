@@ -29,7 +29,7 @@ type ContactFormValues = z.infer<typeof contactSchema>;
 
 export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -46,12 +46,12 @@ export function ContactSection() {
       setIsSubmitting(true);
       const response = await apiRequest("POST", "/api/contact", data);
       const result = await response.json();
-      
+
       toast({
         title: "Success!",
         description: result.message || "Your message has been sent successfully!",
       });
-      
+
       form.reset();
     } catch (error) {
       toast({
@@ -73,7 +73,7 @@ export function ContactSection() {
             Have questions or ready to discuss your project? Reach out to our team for assistance.
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Contact Information */}
           <div>
@@ -120,7 +120,7 @@ export function ContactSection() {
                 </div>
               </CardContent>
             </Card>
-            
+
             {/* Map */}
             <Card className="bg-white p-4 rounded-lg shadow-md">
               <CardContent className="p-0">
@@ -138,7 +138,7 @@ export function ContactSection() {
               </CardContent>
             </Card>
           </div>
-          
+
           {/* Contact Form */}
           <Card className="bg-white p-8 rounded-lg shadow-md">
             <CardContent className="p-0">
@@ -163,7 +163,7 @@ export function ContactSection() {
                       </FormItem>
                     )}
                   />
-                  
+
                   <FormField
                     control={form.control}
                     name="email"
@@ -183,7 +183,7 @@ export function ContactSection() {
                       </FormItem>
                     )}
                   />
-                  
+
                   <FormField
                     control={form.control}
                     name="phone"
@@ -203,7 +203,7 @@ export function ContactSection() {
                       </FormItem>
                     )}
                   />
-                  
+
                   <FormField
                     control={form.control}
                     name="subject"
@@ -222,7 +222,7 @@ export function ContactSection() {
                       </FormItem>
                     )}
                   />
-                  
+
                   <FormField
                     control={form.control}
                     name="message"
@@ -242,7 +242,7 @@ export function ContactSection() {
                       </FormItem>
                     )}
                   />
-                  
+
                   <div className="pt-2">
                     <Button
                       type="submit"
