@@ -1,4 +1,3 @@
-
 import { Service } from '@/types/service';
 
 export const services: Service[] = [
@@ -64,5 +63,12 @@ export const services: Service[] = [
     description: "Advanced telephone systems and unified communications. Supporting modern business needs with VoIP, PBX, and integrated messaging solutions.",
     imageUrl: "/images/services/telephone.jpg",
     icon: "fas fa-phone-alt"
+  },
+  {
+    id: 10,
+    title: "Point to Point Blueprint Design",
+    description: "Detailed blueprint design for point-to-point communication systems.",
+    imageUrl: "/images/services/blueprint.jpg",  // Placeholder image URL
+    icon: "fas fa-file-alt"                  // Placeholder icon
   }
 ];
