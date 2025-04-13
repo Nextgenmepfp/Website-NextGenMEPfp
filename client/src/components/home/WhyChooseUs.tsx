@@ -17,7 +17,7 @@ export function WhyChooseUs() {
   const benefits = [
     {
       id: 1,
-      image: "/images/why-choose-us/Engineers design.avif",
+      image: "/images/why-choose-us/engineers-blueprint-meeting.jpg",
       title: "POINT TO POINT BLUEPRINT DESIGN",
       description: "Our expert team creates detailed, precise blueprints that meet industry standards and ensure smooth project execution."
     },
