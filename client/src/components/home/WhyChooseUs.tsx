@@ -30,8 +30,8 @@ export function WhyChooseUs() {
     {
       id: 3,
       image: "/images/why-choose-us/WhatsApp Image 2025-03-29 at 18.36.54.jpeg",
-      title: "AVAILABLE WORLDWIDE",
-      description: "Serving clients globally with our comprehensive MEP and blueprint engineering services."
+      title: "40+ YEARS OF REFERENCES & MASSIVE PROJECTS COMPLETED",
+      description: "NextGen MEPfp Low Voltage Point to Point Architecture leads the Industry in Precision Blueprints"
     }
   ];
 
