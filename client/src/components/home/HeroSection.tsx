@@ -71,7 +71,7 @@ export function HeroSection() {
         </motion.div>
       </motion.div>
 
-      <div className="grid md:grid-cols-3 gap-4 max-w-[1920px] mx-auto p-2 bg-gray-50"> {/* Reduced padding */}
+      <div className="grid md:grid-cols-3 gap-8 max-w-[1920px] mx-auto p-8 bg-gray-50">
         {/* Project Slider */}
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
