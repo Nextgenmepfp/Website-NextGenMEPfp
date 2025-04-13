@@ -1,8 +1,14 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+type SliderImage = {
+  image: string;
+  title: string;
+  location: string;
+};
+
 type ImageSliderProps = {
-  images: string[];
+  images: SliderImage[];
   autoPlayInterval?: number;
 };
 
@@ -62,12 +68,19 @@ export function ImageSlider({ images, autoPlayInterval = 5000 }: ImageSliderProp
             }`}
           >
             <img
-              src={image}
-              alt={`Project ${index + 1}`}
+              src={image.image}
+              alt={image.title}
               className="w-full h-full object-cover"
               draggable="false"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+            <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="bg-black bg-opacity-50 px-6 py-3 rounded-lg">
+                <span className="text-white text-2xl font-bold">{image.title}</span>
+                <span className="text-white mx-2">–</span>
+                <span className="text-white text-xl">{image.location}</span>
+              </div>
+            </div>
           </div>
         ))}
       </div>

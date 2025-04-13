@@ -1,5 +1,5 @@
 import { ImageSlider } from "@/components/home/ImageSlider";
-import { sliderImages } from "@/data/slider-images";
+import { projectImages } from "@/data/slider-images";
 import consultantImage from "@assets/choose.png";
 import { motion } from "framer-motion";
 
@@ -80,7 +80,14 @@ export function HeroSection() {
           className="md:col-span-2 relative"
         >
           <div className="rounded-xl overflow-hidden shadow-2xl transform transition-transform duration-500"> {/* Removed hover scale */}
-            <ImageSlider images={sliderImages} autoPlayInterval={6000} />
+            <ImageSlider 
+              images={projectImages.map(project => ({
+                image: project.image,
+                title: project.title,
+                location: project.location
+              }))} 
+              autoPlayInterval={6000}
+            />
           </div>
         </motion.div>
 
