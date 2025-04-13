@@ -3,7 +3,7 @@ import Home from "@/pages/Home";
 import WhyChooseUs from "@/pages/WhyChooseUs";
 import Services from "@/pages/Services";
 import Projects from "@/pages/Projects";
-import Models3D from "@/pages/Models3D";
+
 import Testimonials from "@/pages/Testimonials";
 import Contact from "@/pages/Contact";
 import { Header } from "@/components/layout/Header";
@@ -25,7 +25,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/services/:serviceId" element={<ServiceDetail />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/3d-models" element={<Models3D />} />
+          
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
