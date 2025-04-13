@@ -34,7 +34,7 @@ export function HeroSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-600 via-red-500 to-red-400 mb-4 px-4 relative z-10 tracking-tight"
         >
-          LOW VOLTAGE AND BLUEPRINT
+          Low Voltage Point to Point Blueprint Design and Engineering
         </motion.h2>
 
         <motion.div
