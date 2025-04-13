@@ -23,7 +23,7 @@ export function WhyChooseUs() {
     },
     {
       id: 2,
-      image: "/images/why-choose-us/WhatsApp Image 2025-03-29 at 18.14.21.jpeg",
+      image: "/images/why-choose-us/engineers-design.jpeg",
       title: "INNOVATIVE SOLUTIONS",
       description: "We leverage cutting-edge technology and industry best practices to deliver innovative MEP solutions tailored to your needs."
     },
