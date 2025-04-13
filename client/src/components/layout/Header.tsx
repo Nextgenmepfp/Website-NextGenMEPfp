@@ -68,7 +68,6 @@ export function Header() {
                 <button onClick={() => handleNavClick("/why-choose-us")} className="text-white py-2 text-left hover:bg-red-700 px-4 rounded">Why Choose Us</button>
                 <button onClick={() => handleNavClick("/services")} className="text-white py-2 text-left hover:bg-red-700 px-4 rounded">Services</button>
                 <button onClick={() => handleNavClick("/projects")} className="text-white py-2 text-left hover:bg-red-700 px-4 rounded">Projects</button>
-                <button onClick={() => handleNavClick("/3d-models")} className="text-white py-2 text-left hover:bg-red-700 px-4 rounded">3D Models</button>
                 <button onClick={() => handleNavClick("/contact")} className="text-white py-2 text-left hover:bg-red-700 px-4 rounded">Contact Us</button>
               </div>
             </div>
