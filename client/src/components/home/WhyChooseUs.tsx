@@ -29,7 +29,7 @@ export function WhyChooseUs() {
     },
     {
       id: 3,
-      image: "/images/why-choose-us/ChatGPT Image Apr 13, 2025, 06_15_30 PM.png",
+      image: "/images/why-choose-us/blueprint-engineer.jpeg",
       title: "40+ YEARS OF REFERENCES & MASSIVE PROJECTS COMPLETED",
       description: "NextGen MEPfp Low Voltage Point to Point Architecture leads the Industry in Precision Blueprints"
     }
