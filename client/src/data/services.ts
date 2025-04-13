@@ -66,7 +66,7 @@ export const services: Service[] = [
   },
   {
     id: 10,
-    title: "Point to Point Blueprint Design",
+    title: "POINT TO POINT BLUEPRINT DESIGN",
     description: "Detailed blueprint design for point-to-point communication systems.",
     imageUrl: "/images/services/blueprint.jpg",  // Placeholder image URL
     icon: "fas fa-file-alt"                  // Placeholder icon
