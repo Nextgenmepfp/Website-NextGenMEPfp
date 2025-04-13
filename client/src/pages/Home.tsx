@@ -17,7 +17,7 @@ export default function Home() {
               </span>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-8 bg-gradient-to-r from-[#FA061A] to-red-700 bg-clip-text text-transparent animate-gradient tracking-wide font-playfair leading-tight">
-              NextGenMEPfp will Design/Engineer & Customise your Commercial Project for half the cost of any compitetion - WE KNOW LOW VOLTAGE
+              NextGenMEPfp will Design/Engineer & Customise your Commercial Project for half the cost of any competition - WE KNOW LOW VOLTAGE
             </h2>
           </div>
         </div>
