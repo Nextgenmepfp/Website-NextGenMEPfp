@@ -28,7 +28,7 @@ export function ServicesSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-gray-600 max-w-3xl mx-auto"
           >
-            Low Voltage Point to Point Blueprint Design and Engineering solutions for commercial and industrial projects.
+            Low Voltage Point to Point Blueprint Design and Engineering
           </motion.p>
         </div>
 
