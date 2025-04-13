@@ -63,10 +63,10 @@ export function HeroSection() {
           className="flex justify-center gap-4 mt-6"
         >
           <div className="px-4 py-2 bg-red-400 rounded-lg shadow-sm">
-            <span className="text-white font-bold text-lg">15+ Years Experience</span>
+            <span className="text-white font-bold text-lg">40+ Years Experience</span>
           </div>
           <div className="px-4 py-2 bg-red-400 rounded-lg shadow-sm">
-            <span className="text-white font-bold text-lg">100% Success Rate</span>
+            <span className="text-white font-bold text-lg">Lowest Pricing</span>
           </div>
         </motion.div>
       </motion.div>
