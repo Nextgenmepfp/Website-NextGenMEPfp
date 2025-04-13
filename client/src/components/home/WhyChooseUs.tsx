@@ -24,8 +24,8 @@ export function WhyChooseUs() {
     {
       id: 2,
       image: "/images/why-choose-us/WhatsApp Image 2025-03-29 at 18.14.21.jpeg",
-      title: "POINT TO POINT BLUEPRINT DESIGN",
-      description: "Our expert team creates detailed, precise blueprints that meet industry standards and ensure smooth project execution."
+      title: "INNOVATIVE SOLUTIONS",
+      description: "We leverage cutting-edge technology and industry best practices to deliver innovative MEP solutions tailored to your needs."
     },
     {
       id: 3,
