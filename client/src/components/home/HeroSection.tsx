@@ -32,7 +32,7 @@ export function HeroSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-600 via-red-500 to-red-400 mb-8 px-4 relative z-10 tracking-tight"
+          className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-600 via-red-500 to-red-400 mb-8 px-4 pb-4 relative z-10 tracking-tight leading-relaxed"
         >
           Low Voltage Point to Point Blueprint Design and Engineering
         </motion.h2>
