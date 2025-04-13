@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 
 export function WhyChooseUs() {
@@ -24,9 +23,9 @@ export function WhyChooseUs() {
     },
     {
       id: 2,
-      image: "/images/why-choose-us/WhatsApp Image 2025-03-29 at 18.34.31.jpeg",
-      title: "LOW VOLTAGE EXPERTS",
-      description: "Specialized in low voltage systems with years of experience in designing and implementing cutting-edge solutions."
+      image: "/images/why-choose-us/WhatsApp Image 2025-03-29 at 18.14.21.jpeg",
+      title: "40+ YEARS OF REFERENCES & MASSIVE PROJECTS COMPLETED",
+      description: "NextGen MEPfp Low Voltage Point to Point Architecture leads the Industry in Precision Blueprints"
     },
     {
       id: 3,
