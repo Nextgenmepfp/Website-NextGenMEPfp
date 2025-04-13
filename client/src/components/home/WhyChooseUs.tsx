@@ -17,7 +17,7 @@ export function WhyChooseUs() {
   const benefits = [
     {
       id: 1,
-      image: "/images/why-choose-us/engineers-blueprint-meeting.jpg",
+      image: "/images/why-choose-us/WhatsApp Image 2025-04-13 at 5.58.51 PM.jpeg",
       title: "POINT TO POINT BLUEPRINT DESIGN",
       description: "Our expert team creates detailed, precise blueprints that meet industry standards and ensure smooth project execution."
     },
@@ -29,7 +29,7 @@ export function WhyChooseUs() {
     },
     {
       id: 3,
-      image: "/images/why-choose-us/WhatsApp Image 2025-03-29 at 18.36.54.jpeg",
+      image: "/images/why-choose-us/ChatGPT Image Apr 13, 2025, 06_15_30 PM.png",
       title: "40+ YEARS OF REFERENCES & MASSIVE PROJECTS COMPLETED",
       description: "NextGen MEPfp Low Voltage Point to Point Architecture leads the Industry in Precision Blueprints"
     }
