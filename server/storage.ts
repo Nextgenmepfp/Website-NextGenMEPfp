@@ -1,33 +1,86 @@
+import { Pool } from 'pg';
+import type { User, InsertUser, Waitlist, InsertWaitlist, Contact, InsertContact, Newsletter, InsertNewsletter } from '@shared/schema';
+
+class Storage {
+  private pool: Pool;
+
+  constructor() {
+    if (!process.env.DATABASE_URL) {
+      throw new Error('DATABASE_URL environment variable is required');
+    }
+
+    this.pool = new Pool({
+      connectionString: process.env.DATABASE_URL,
+      max: 10
+    });
+  }
+
+  async createContactEntry(entry: InsertContact): Promise<Contact> {
+    const result = await this.pool.query(
+      'INSERT INTO contacts (name, email, phone, subject, message) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+      [entry.name, entry.email, entry.phone, entry.subject, entry.message]
+    );
+    return result.rows[0];
+  }
+
+  async getContactEntries(): Promise<Contact[]> {
+    const result = await this.pool.query('SELECT * FROM contacts ORDER BY created_at DESC');
+    return result.rows;
+  }
+
+  async createWaitlistEntry(entry: InsertWaitlist): Promise<Waitlist> {
+    const result = await this.pool.query(
+      'INSERT INTO waitlist (name, email, company, interest) VALUES ($1, $2, $3, $4) RETURNING *',
+      [entry.name, entry.email, entry.company, entry.interest]
+    );
+    return result.rows[0];
+  }
+
+  async getWaitlistEntries(): Promise<Waitlist[]> {
+    const result = await this.pool.query('SELECT * FROM waitlist ORDER BY created_at DESC');
+    return result.rows;
+  }
+
+  async createNewsletterEntry(entry: InsertNewsletter): Promise<Newsletter> {
+    const result = await this.pool.query(
+      'INSERT INTO newsletter (email) VALUES ($1) RETURNING *',
+      [entry.email]
+    );
+    return result.rows[0];
+  }
+
+  async getNewsletterEntries(): Promise<Newsletter[]> {
+    const result = await this.pool.query('SELECT * FROM newsletter ORDER BY created_at DESC');
+    return result.rows;
+  }
+
+  async createUser(user: InsertUser): Promise<User> {
+    const result = await this.pool.query(
+      'INSERT INTO users (username, password) VALUES ($1, $2) RETURNING *',
+      [user.username, user.password]
+    );
+    return result.rows[0];
+  }
+
+  async getUser(id: number): Promise<User | undefined> {
+    const result = await this.pool.query('SELECT * FROM users WHERE id = $1', [id]);
+    return result.rows[0];
+  }
+
+  async getUserByUsername(username: string): Promise<User | undefined> {
+    const result = await this.pool.query('SELECT * FROM users WHERE username = $1', [username]);
+    return result.rows[0];
+  }
+}
+
+export const storage = new Storage();
+
 import {
   users, type User, type InsertUser,
   waitlist, type Waitlist, type InsertWaitlist,
   newsletter, type Newsletter, type InsertNewsletter,
   type Contact, type InsertContact
 } from "@shared/schema";
-import { createPool } from 'mysql2/promise';
-
-// Create MySQL connection pool
-const pool = createPool({
-  host: process.env.MYSQL_HOST,
-  port: 3306,
-  user: process.env.MYSQL_USER,
-  password: process.env.MYSQL_PASSWORD,
-  database: process.env.MYSQL_DATABASE,
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0,
-  connectTimeout: 60000
-});
-
-// Test the connection
-pool.getConnection()
-  .then(connection => {
-    console.log('Database connected successfully');
-    connection.release();
-  })
-  .catch(err => {
-    console.error('Error connecting to the database:', err.message);
-  });
 
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
@@ -124,58 +177,10 @@ export class MemStorage implements IStorage {
   async getNewsletterEntries(): Promise<Newsletter[]> {
     return Array.from(this.newsletterEntries.values());
   }
-}
-
-export class Storage implements IStorage {
   async createContactEntry(entry: InsertContact): Promise<Contact> {
-    const connection = await pool.getConnection();
-    try {
-      const [result] = await connection.execute(
-        'INSERT INTO contacts (name, email, phone, subject, message) VALUES (?, ?, ?, ?, ?)',
-        [entry.name, entry.email, entry.phone || null, entry.subject, entry.message]
-      );
-
-      const insertId = (result as any).insertId;
-      return {
-        id: insertId,
-        ...entry,
-        createdAt: new Date()
-      };
-    } finally {
-      connection.release();
-    }
+    throw new Error("Method not implemented.");
   }
-
   async getContactEntries(): Promise<Contact[]> {
-    const connection = await pool.getConnection();
-    try {
-      const [rows] = await connection.execute('SELECT * FROM contacts ORDER BY created_at DESC');
-      return rows as Contact[];
-    } finally {
-      connection.release();
-    }
-  }
-  async getUser(id: number): Promise<User | undefined> {
-    throw new Error("Method not implemented.");
-  }
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    throw new Error("Method not implemented.");
-  }
-  async createUser(user: InsertUser): Promise<User> {
-    throw new Error("Method not implemented.");
-  }
-  async createWaitlistEntry(entry: InsertWaitlist): Promise<Waitlist> {
-    throw new Error("Method not implemented.");
-  }
-  async getWaitlistEntries(): Promise<Waitlist[]> {
-    throw new Error("Method not implemented.");
-  }
-  async createNewsletterEntry(entry: InsertNewsletter): Promise<Newsletter> {
-    throw new Error("Method not implemented.");
-  }
-  async getNewsletterEntries(): Promise<Newsletter[]> {
     throw new Error("Method not implemented.");
   }
 }
-
-export const storage = new Storage();
