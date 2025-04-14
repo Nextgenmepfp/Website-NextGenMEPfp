@@ -72,7 +72,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         port: 587,
         secure: false,
         auth: {
-          user: '895fd1001@smtp-brevo.com',
+          user: '895fd1002@smtp-brevo.com',
           pass: 'bTM3jNLSmIWJPOwZ'
         },
         debug: true, // Enable debug logs
