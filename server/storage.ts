@@ -1,76 +1,76 @@
-import pg from 'pg';
-const { Pool } = pg;
+import mysql from 'mysql2/promise';
 import type { User, InsertUser, Waitlist, InsertWaitlist, Contact, InsertContact, Newsletter, InsertNewsletter } from '@shared/schema';
 
 class Storage {
-  private pool: Pool;
+  private pool: mysql.Pool;
 
   constructor() {
-    if (!process.env.DATABASE_URL) {
-      throw new Error('DATABASE_URL environment variable is required');
-    }
-
-    this.pool = new Pool({
-      connectionString: process.env.DATABASE_URL,
-      max: 10
+    this.pool = mysql.createPool({
+      host: process.env.MYSQL_HOST || '132.148.103.60',
+      user: process.env.MYSQL_USER || 'User1',
+      password: process.env.MYSQL_PASSWORD || 'Contactform@2025',
+      database: process.env.MYSQL_DATABASE || 'Contactform',
+      waitForConnections: true,
+      connectionLimit: 10,
+      queueLimit: 0
     });
   }
 
   async createContactEntry(entry: InsertContact): Promise<Contact> {
-    const result = await this.pool.query(
-      'INSERT INTO contacts (name, email, phone, subject, message) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+    const [result] = await this.pool.execute(
+      'INSERT INTO contacts (name, email, phone, subject, message) VALUES (?, ?, ?, ?, ?)',
       [entry.name, entry.email, entry.phone, entry.subject, entry.message]
     );
-    return result.rows[0];
+    return { ...entry, id: (result as any).insertId, created_at: new Date() };
   }
 
   async getContactEntries(): Promise<Contact[]> {
-    const result = await this.pool.query('SELECT * FROM contacts ORDER BY created_at DESC');
-    return result.rows;
+    const [rows] = await this.pool.execute('SELECT * FROM contacts ORDER BY created_at DESC');
+    return rows as Contact[];
   }
 
   async createWaitlistEntry(entry: InsertWaitlist): Promise<Waitlist> {
-    const result = await this.pool.query(
-      'INSERT INTO waitlist (name, email, company, interest) VALUES ($1, $2, $3, $4) RETURNING *',
+    const [result] = await this.pool.execute(
+      'INSERT INTO waitlist (name, email, company, interest) VALUES (?, ?, ?, ?)',
       [entry.name, entry.email, entry.company, entry.interest]
     );
-    return result.rows[0];
+    return { ...entry, id: (result as any).insertId, created_at: new Date() };
   }
 
   async getWaitlistEntries(): Promise<Waitlist[]> {
-    const result = await this.pool.query('SELECT * FROM waitlist ORDER BY created_at DESC');
-    return result.rows;
+    const [rows] = await this.pool.execute('SELECT * FROM waitlist ORDER BY created_at DESC');
+    return rows as Waitlist[];
   }
 
   async createNewsletterEntry(entry: InsertNewsletter): Promise<Newsletter> {
-    const result = await this.pool.query(
-      'INSERT INTO newsletter (email) VALUES ($1) RETURNING *',
+    const [result] = await this.pool.execute(
+      'INSERT INTO newsletter (email) VALUES (?)',
       [entry.email]
     );
-    return result.rows[0];
+    return { ...entry, id: (result as any).insertId, created_at: new Date() };
   }
 
   async getNewsletterEntries(): Promise<Newsletter[]> {
-    const result = await this.pool.query('SELECT * FROM newsletter ORDER BY created_at DESC');
-    return result.rows;
+    const [rows] = await this.pool.execute('SELECT * FROM newsletter ORDER BY created_at DESC');
+    return rows as Newsletter[];
   }
 
   async createUser(user: InsertUser): Promise<User> {
-    const result = await this.pool.query(
-      'INSERT INTO users (username, password) VALUES ($1, $2) RETURNING *',
+    const [result] = await this.pool.execute(
+      'INSERT INTO users (username, password) VALUES (?, ?)',
       [user.username, user.password]
     );
-    return result.rows[0];
+    return { ...user, id: (result as any).insertId };
   }
 
   async getUser(id: number): Promise<User | undefined> {
-    const result = await this.pool.query('SELECT * FROM users WHERE id = $1', [id]);
-    return result.rows[0];
+    const [rows] = await this.pool.execute('SELECT * FROM users WHERE id = ?', [id]);
+    return (rows as User[])[0];
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    const result = await this.pool.query('SELECT * FROM users WHERE username = $1', [username]);
-    return result.rows[0];
+    const [rows] = await this.pool.execute('SELECT * FROM users WHERE username = ?', [username]);
+    return (rows as User[])[0];
   }
 }
 
