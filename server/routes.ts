@@ -75,6 +75,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
           user: process.env.SMTP_USER,
           pass: process.env.SMTP_PASS
         },
+        tls: {
+          rejectUnauthorized: false
+        },
+        pool: true,
+        maxConnections: 1,
+        rateDelta: 20000,
+        rateLimit: 5,
         debug: true, // Enable debug logs
         logger: true // Log to console
       });
