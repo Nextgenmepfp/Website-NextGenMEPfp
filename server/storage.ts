@@ -1,4 +1,5 @@
-import { Pool } from 'pg';
+import pg from 'pg';
+const { Pool } = pg;
 import type { User, InsertUser, Waitlist, InsertWaitlist, Contact, InsertContact, Newsletter, InsertNewsletter } from '@shared/schema';
 
 class Storage {
